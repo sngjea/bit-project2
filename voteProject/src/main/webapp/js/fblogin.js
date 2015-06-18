@@ -49,7 +49,7 @@ function testAPI() {
   FB.api('/me', function(response) {
 	  $.removeCookie("state_token");
     $.cookie("state_token", generateState() );
-    window.location.replace("http://192.168.10.65:9999/voteProject/home.html");
+    window.location.replace("http://192.168.10.65:9999/voteProject/home.html?fb=&id=" + response.id + "&email=" + response.email);
   });
 }
 
