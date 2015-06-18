@@ -16,7 +16,7 @@ function checkLoginState() {
   });
 }
 
- function rkskek() {
+ function 병근스웨거() {
   FB.init({
     appId      : '1625255044379083',
     cookie     : true,  // enable cookies to allow the server to access 
@@ -47,7 +47,7 @@ function checkLoginState() {
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
   FB.api('/me', function(response) {
-    $.removeCookie("state_token");
+	  $.removeCookie("state_token");
     $.cookie("state_token", generateState() );
     window.location.replace("http://192.168.10.65:9999/voteProject/home.html");
   });
