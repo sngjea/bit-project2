@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script
+            src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="http://malsup.github.com/jquery.cycle.all.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#headerRotate').cycle({
+                fx: 'fade',
+                timeout: 2500
+            });
+        });
+    </script>
+</head>
+<style>
+    html, body {
+        height: 100%;
+    }
+
+    #headerRotate {
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+
+    #headerRotate div {
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+</style>
+
+<body>
+<div id="headerRotate">
+    <div
+            style="background: url('/famous/images/30.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+    <div
+            style="background: url('/famous/images/31.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+    <div
+            style="background: url('/famous/images/40.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+</div>
+</body>
+</html>
