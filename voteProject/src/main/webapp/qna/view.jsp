@@ -37,7 +37,7 @@ thead {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background: url(/resources/images/IMG_9964.jpg) no-repeat center center
+	background: url(images/IMG_9964.jpg) no-repeat center center
 		fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
