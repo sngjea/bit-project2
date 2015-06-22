@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script
+            src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .navbar {
+        margin-bottom: 0px;
+    }
+
+    #nav ul li a:hover, #nav ul li a:active {
+        color: #FFA500;
+    }
+
+    .jumbotron {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url(images/IMG_9974.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin: 0 !important;
+        height: 500px
+    }
+
+    #margin {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    h1 {
+        font-family: "맑은고딕", "Malgun Gothic", serif;
+    }
+
+    /* h2태그에 서체 지정 */
+    .font {
+        font-family: "돋움", Dotum, "돋움체", DotumChe;
+    }
+
+    /* class=font 에 서체지정*/
+
+</style>
+<body>
+<div id="nav">
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">Poll</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="intro.html">Intro</a></li>
+                <li><a href="clicktovote.html">Click to Vote</a></li>
+                <li><a href="qna/list.html">QnA</a></li>
+                <li><a href="login.html" type="button btn-default">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <div id="margin">
+        <div class="row col-lg-offset-1">
+            <div class="col-lg-6">
+                            <span style="color: #FFA500">
+                                <h1>
+                                    <strong>IT-related</strong>
+                                </h1>
+                            </span>
+            </div>
+            <div class="col-lg-6">
+                <form class="form-horizontal" method="post" role="form">
+                    <br><br>
+
+                    <div class="form-group">
+                        <div class="col-lg-8">
+                            <button type="submit" class="btn btn-success">Register vote immediately</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-8">
+                                        <span style="color: white"> <small>By clicking
+                                            "Sign up for PRM". We will send you account related emails
+                                            occasionally.
+                                        </small>
+                                        </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <!--<div class="row placeholders">-->
+    <!--<div class="col-lg-offset-2">-->
+    <!--<div class="col-lg-2">-->
+    <!--<a href="/famous/views/home.html">-->
+    <!--<img data-src="holder.js/200x200/auto/sky" img-->
+    <!--src="/famous/images/it.png" class="img-responsive" alt="Generic placeholder thumbnail" title="ddddddddddd"></a>-->
+    <!--<br>-->
+    <!--<h4>IT relate</h4>-->
+    <!--</div>-->
+    <!--<div class="col-lg-2">-->
+    <!--<a href="/famous/views/home_fashion.html">-->
+    <!--<img data-src="holder.js/200x200/auto/sky" img-->
+    <!--src="/famous/images/fashion.png" class="img-responsive" alt="Generic placeholder thumbnail"></a>-->
+    <!--<br>-->
+    <!--<h4>Fashion</h4>-->
+    <!--</div>-->
+    <!--<div class="col-lg-2">-->
+    <!--<a href="/famous/views/home_food.html">-->
+    <!--<img data-src="holder.js/200x200/auto/sky" img src="/famous/images/food.png" class="img-responsive" alt="Generic placeholder thumbnail"></a>-->
+    <!--<br>-->
+    <!--<h4>Food for</h4>-->
+    <!--</div>-->
+    <!--<div class="col-lg-2">-->
+    <!--<a href="/famous/views/home_date.html">-->
+    <!--<img data-src="holder.js/200x200/auto/sky" img-->
+    <!--src="/famous/images/date.png" class="img-responsive" alt="Generic placeholder thumbnail"></a>-->
+    <!--<br>-->
+    <!--<h4>Dating's</h4>-->
+    <!--</div>-->
+    <!--<div class="col-lg-2">-->
+    <!--<a href="/famous/views/home_etc.html">-->
+    <!--<img data-src="holder.js/200x200/auto/sky" img-->
+    <!--src="/famous/images/etc.png" class="img-responsive" alt="Generic placeholder thumbnail"></a>-->
+    <!--<br>-->
+    <!--<h4>Remain</h4>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<br>-->
+    <!--<br>-->
+    <!--<br>-->
+    <!--<br>-->
+
+    <!--</div>-->
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-2 placeholder">
+            <a href="home.html"><img
+                    src="images/it.png"
+                    class="featurette-image img-responsive"
+                    src="data:image/png;base64," data-src="holder.js/500x500/auto"
+                    alt="Generic placeholder image img-circle"></a>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-2 placeholder">
+            <a href="home_fashion.html"><img
+                    src="images/fashion.png"
+                    class="featurette-image img-responsive"
+                    src="data:image/png;base64," data-src="holder.js/500x500/auto"
+                    alt="Generic placeholder image img-circle"></a>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-2 placeholder">
+            <a href="home_food.html"><img
+                    src="images/food.png"
+                    class="featurette-image img-responsive"
+                    src="data:image/png;base64," data-src="holder.js/500x500/auto"
+                    alt="Generic placeholder image img-circle"></a>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-2 placeholder">
+            <a href="home_date.html"><img
+                    src="images/date.png"
+                    class="featurette-image img-responsive"
+                    src="data:image/png;base64," data-src="holder.js/500x500/auto"
+                    alt="Generic placeholder image img-circle"></a>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-2 placeholder">
+            <a href="home_game.html"><img
+                    src="images/gamegame.png"
+                    class="featurette-image img-responsive"
+                    src="data:image/png;base64," data-src="holder.js/500x500/auto"
+                    alt="Generic placeholder image img-circle"></a>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-2 placeholder">
+            <a href="home_etc.html"><img
+                    src="images/etc.png"
+                    class="featurette-image img-responsive"
+                    src="data:image/png;base64," data-src="holder.js/500x500/auto"
+                    alt="Generic placeholder image img-circle"></a>
+            <br>
+        </div>
+    </div>
+
+    <hr>
+    <br>
+
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="mypage/view.html"><img
+                    src="images/mypage001.jpg"
+                    class="featurette-image img-responsive"
+                    src="data:image/png;base64," data-src="holder.js/500x500/auto"
+                    alt="Generic placeholder image img-circle"></a>
+            <h4>
+                <strong><center>노트북</center></strong>
+            </h4>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="images/mypage002.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>
+                <strong><center>컴퓨터</center></strong>
+            </h4>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="images/mypage002.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>
+                <strong><center>핸드폰</center></strong>
+            </h4>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="images/mypage001.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>
+                <strong><center>마우스</center></strong>
+            </h4>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="images/mypage002.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>
+                <strong><center>SSD</center></strong>
+            </h4>
+            <br>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="images/mypage002.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>
+                <strong><center>스피커</center></strong>
+            </h4>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="images/mypage001.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+            <h4>
+                <strong><center>USB</center></strong>
+            </h4>
+            <br>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+</div>
+
+<hr>
+
+<footer>
+    <p>&copy; PRM 2014</p>
+</footer>
+
+<hr>
+
+</div>
+
+<script>
+    $("img").hover(function () {
+        $(this).css("opacity", 0.4);
+    }, function () {
+        $(this).css("opacity", 1);
+    });
+
+    //		var domain = document.domain;
+    //		$('#removeBtn').click(function() {
+    //			if (confirm('삭제하시겠습니까?')) {
+    //				$.ajax({
+    //					url : "http://" + domain + ":8080/mypage/remove",
+    //					type : 'post',
+    //					data : {
+    //						email : "${username}"
+    //					},
+    //					success : function(data) {
+    //						console.log(data);
+    //						window.location.href = "j_spring_security_logout";
+    //					}
+    //				});
+    //			}
+    //		});
+</script>
+</body>
+</html>

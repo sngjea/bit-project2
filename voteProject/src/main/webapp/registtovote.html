@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RegistToVote</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script
+            src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .navbar {
+        margin-bottom: 0px;
+    }
+
+    #nav ul li a:hover, #nav ul li a:active {
+        color: #FFA500;
+    }
+
+    .jumbotron {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url(images/IMG_9974.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin: 0 !important;
+        height: 500px
+    }
+
+    #margin {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    h1 {
+        font-family: "맑은고딕", "Malgun Gothic", serif;
+    }
+
+    /* h2태그에 서체 지정 */
+    .font {
+        font-family: "돋움", Dotum, "돋움체", DotumChe;
+    }
+
+    /* class=font 에 서체지정*/
+
+</style>
+<body>
+
+<div id="nav">
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">Poll</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="intro.html">Intro</a></li>
+                <li><a href="clicktovote.html">Click to Vote</a></li>
+                <li><a href="qna/list.html">QnA</a></li>
+                <li><a href="login.html" type="button btn-default">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div id="margin">
+        <div class="row col-lg-offset-2">
+            <div class="col-lg-9">
+					<span style="color: #FFA500">
+						<h1>
+                            <strong>RegistToVote</strong>
+                        </h1>
+					</span> <span style="color: white">
+						<p>Formulate and stamp indelibly on your mind a mental picture
+                            of yourself as succeeding. Hold this picture tenaciously. Never
+                            permit it to fade. Your mind will seek to develop the picture. Do
+                            not build up obstacles in your imagination.</p>
+					</span>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+	<form action="vote/add.do" method="post" enctype="multipart/form-data">
+    <div class="container">
+       <!--  <input name="title" type="subject" class="form-control" placeholder="subject"> -->
+        <label>RegistDate</label> 2015-04-14
+        <input name="title" type="title" class="form-control" placeholder="Title">
+        <select name="category" class="form-control">
+            <option>IT</option>
+            <option>Fashion</option>
+            <option>Food</option>
+            <option>Date</option>
+            <option>Game</option>
+            <option>Etc</option>
+        </select>
+	
+        <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="thumbnail">
+                        <img data-src="holder.js/100%x200" src="images/date.jpg" class="thumbnail"
+                             alt="Generic placeholder thumbnail">
+                    </div>
+                    <div class="form-group">
+                        <input name="photo1"class="form-control" id="inputFile" type="file">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="thumbnail">
+                        <img data-src="holder.js/100%x200" src="images/IMG_9944.jpg" class="thumbnail"
+                             alt="Generic placeholder thumbnail">
+                    </div>
+                    <div class="form-group">
+                        <input name="photo2"class="form-control" id="inputFile" type="file">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-6 col-md-6">
+                    <!--<div class="thumbnail">-->
+                    <div class="caption">
+                        <div class="form-group">
+                            <input name="photoTag1"type="text" class="form-control" placeholder="photoTag1">
+                            <!--<textarea class="form-control" rows="5"></textarea>-->
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="caption">
+                        <div class="form-group">
+                            <input name="photoTag2" type="text" class="form-control" placeholder="photoTag2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <textarea name="content" class="form-control" placeholder="content" rows="5"></textarea>
+                        <input type="hidden" name="userID" value="1234213"/>
+                    </div>
+                </div>
+       
+             </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                  <button  type="submit" class="btn btn-warning pull-right">등록</button>
+                <a href="home.html" class="btn btn-default pull-right">취소</a>
+            </div>
+        </div>
+        <hr>
+      
+	</form>
+        <footer>
+            <p class="pull-right">
+                <a href="#"><span style="color: black">Back to top</span></a>
+            </p>
+
+            <p>&copy; PRM 2014</p>
+        </footer>
+    </div>
+</div>
+
+
+</body>
+<script>
+    $("img").hover(function () {
+        $(this).css("opacity", 0.4);
+    }, function () {
+        $(this).css("opacity", 1);
+    });
+
+    //		var domain = document.domain;
+    //		$('#removeBtn').click(function() {
+    //			if (confirm('삭제하시겠습니까?')) {
+    //				$.ajax({
+    //					url : "http://" + domain + ":8080/mypage/remove",
+    //					type : 'post',
+    //					data : {
+    //						email : "${username}"
+    //					},
+    //					success : function(data) {
+    //						console.log(data);
+    //						window.location.href = "j_spring_security_logout";
+    //					}
+    //				});
+    //			}
+    //		});
+</script>
+</body>
+</html>

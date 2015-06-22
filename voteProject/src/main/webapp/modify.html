@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RegistToVote</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script
+            src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .navbar {
+        margin-bottom: 0px;
+    }
+
+    #nav ul li a:hover, #nav ul li a:active {
+    }
+
+    .jumbotron {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url(/famous/images/IMG_9974.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin: 0 !important;
+        height: 500px
+    }
+
+    #margin {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    h1 {
+        font-family: "맑은고딕", "Malgun Gothic", serif;
+    }
+
+    /* h2태그에 서체 지정 */
+    .font {
+        font-family: "돋움", Dotum, "돋움체", DotumChe;
+    }
+
+    /* class=font 에 서체지정*/
+
+</style>
+<body>
+<div id="nav">
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/famous/views/home.html">Poll</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="intro.html">Intro</a></li>
+                <li><a href="clicktovote.html">Click to Vote</a></li>
+                <li><a href="qna/list.html">QnA</a></li>
+                <li><a href="" type="button btn-default">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <div id="margin">
+        <div class="row col-lg-offset-1">
+            <div class="col-lg-6">
+						<span style="color: #FFA500">
+							<h1>
+                                <strong>Introduce VOTE</strong>
+                            </h1>
+						</span>
+            </div>
+            <div class="col-lg-6">
+                <form class="form-horizontal" method="post" role="form">
+                    <br><br>
+
+                    <div class="form-group">
+                        <div class="col-lg-8">
+                            <a class="btn btn-lg btn-success" href="/famous/views/registtovote.html" role="button">Register
+                                vote immediately</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-8">
+									<span style="color: white"> <small>By clicking
+                                        "Sign up for PRM". We will send you account related emails
+                                        occasionally.
+                                    </small>
+									</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="container">
+        <input class="form-control" name="title" id="inputsubjct"
+               type="text" value="원래 있던 주제">
+        <label>RegistDate</label> 2015-04-14
+        <input class="form-control" name="title" id="inputTitle"
+               type="text" value="원래 있던 투표제목">
+        <select class="form-control">
+            <option>IT</option>
+            <option>Fashion</option>
+            <option>Food</option>
+            <option>Date</option>
+            <option>Game</option>
+            <option>Etc</option>
+        </select>
+
+        <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="thumbnail">
+                        <img data-src="holder.js/100%x200" src="/famous/images/date.jpg" class="thumbnail"
+                             alt="Generic placeholder thumbnail">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="inputFile1" name="file" type="file">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="thumbnail">
+                        <img data-src="holder.js/100%x200" src="/famous/images/IMG_9944.jpg" class="thumbnail"
+                             alt="Generic placeholder thumbnail">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="inputFile2" name="file" type="file">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <center><h1><span class="label label-primary">Count  22</span></h1></center>
+                    <br>
+
+                    <div class="caption">
+                        <div class="form-group">
+                            <input class="form-control" name="title" id="inputname1"
+                                   type="text" value="원래 있던 1번이름">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <center><h1><span class="label label-primary">Count  105</span></h1></center>
+                    <br>
+
+                    <div class="caption">
+                        <div class="form-group">
+                            <input class="form-control" name="title" id="inputname2"
+                                   type="text" value="원래 있던 2번이름">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <textarea class="form-control" name="text" id="textArea2"
+                              rows="5">원래 있던 내용</textarea>
+                    <br>
+                    <button class="btn btn-warning pull-right" type="submit">등록</button>
+                    <a href="/famous/views/mypage/view.html" class="btn btn-default pull-right">취소</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <footer>
+        <p class="pull-right">
+            <a href="#"><span style="color: black">Back to top</span></a>
+        </p>
+
+        <p>&copy; PRM 2014</p>
+    </footer>
+</div>
+</div>
+</body>
+<script>
+    $("img").hover(function () {
+        $(this).css("opacity", 0.4);
+    }, function () {
+        $(this).css("opacity", 1);
+    });
+
+    //		var domain = document.domain;
+    //		$('#removeBtn').click(function() {
+    //			if (confirm('삭제하시겠습니까?')) {
+    //				$.ajax({
+    //					url : "http://" + domain + ":8080/mypage/remove",
+    //					type : 'post',
+    //					data : {
+    //						email : "${username}"
+    //					},
+    //					success : function(data) {
+    //						console.log(data);
+    //						window.location.href = "j_spring_security_logout";
+    //					}
+    //				});
+    //			}
+    //		});
+</script>
+</body>
+</html>
