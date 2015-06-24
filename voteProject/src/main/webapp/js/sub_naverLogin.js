@@ -37,7 +37,7 @@ function saveState(state) {
 var naver = NaverAuthorize({
     client_id : "uwLzuyszQtaz39Mxmie4",
     client_secret : "2xxDvp2lli",
-    redirect_uri : "http://192.168.10.65:9999/voteProject/home.html"
+    redirect_uri : "http://192.168.10.68:9999/voteProject/vote/set"
 });
 
 

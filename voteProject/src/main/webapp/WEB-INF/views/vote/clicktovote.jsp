@@ -113,7 +113,7 @@
 
     <footer>
         <p class="pull-right">
-            <a href="#"><span style="color: black">Back to top</span></a>
+            <a href="http://192.168.10.68:9999/voteProject/clicktovote.html"><span style="color: black">Back to top</span></a>
         </p>
 
         <p>&copy; PRM 2014</p>
@@ -123,31 +123,6 @@
 
 <hr>
 </body>
-<script>
-    //    $("img").hover(function () {
-    //        $(this).css("opacity", 0.4);
-    //    }, function () {
-    //        $(this).css("opacity", 1);
-    })
-    ;
-
-    //		var domain = document.domain;
-    //		$('#removeBtn').click(function() {
-    //			if (confirm('삭제하시겠습니까?')) {
-    //				$.ajax({
-    //					url : "http://" + domain + ":8080/mypage/remove",
-    //					type : 'post',
-    //					data : {
-    //						email : "${username}"
-    //					},
-    //					success : function(data) {
-    //						console.log(data);
-    //						window.location.href = "j_spring_security_logout";
-    //					}
-    //				});
-    //			}
-    //		});
-</script>
 </body>
 </html>
 </div>

@@ -8,15 +8,19 @@
 <mapper namespace="net.bitacademy.java67.dao.VoteDao">
   
   <resultMap type="VoteVo" id="VoteVoMap">
-    <id     column="VTno"      property="no" />
-    <result column="title"    property="title" />
-    <result column="content"  property="content" />
-    <result column="cre_date" property="createDate" />
-    <result column="views"    property="views" />
-    <result column="photo1"    property="photo1" />
-    <result column="photo2"    property="photo2" />
-    <result column="voteCount1"    property="voteCount1" />
-    <result column="voteCount2"    property="voteCount2" />
+    <id     column="VTno"      		property="no" />
+    <result column="userID"         property="userID" />
+    <result column="category"       property="category" />
+    <result column="title"    		property="title" />
+    <result column="content"  		property="content" />
+    <result column="cre_date" 		property="createDate" />
+    <result column="views"    		property="views" />
+    <result column="photo1"    		property="photoOne" />
+    <result column="photo2"    		property="photoTwo" />
+    <result column="photoTag1"      property="photoTag1" />
+    <result column="photoTag2"      property="photoTag2" />
+    <result column="voteCount1"     property="voteCount1" />
+    <result column="voteCount2"     property="voteCount2" />
   </resultMap>
   
   <!-- useGeneratedKeys 속성의 값을 true로 설정하면,
@@ -28,30 +32,9 @@
       VALUES (#{title},#{photoOne},#{photoTwo},#{photoTag1},#{photoTag2},#{voteCount1},#{voteCount2},#{content},#{userID},#{views},#{category},now())
   </insert>
   
-  <select id="selectList" parameterType="map" resultMap="VoteVoMap">
-      SELECT bno, title, cre_date, views 
-      FROM board2
-    <if test="word != null and word != ''">
-      WHERE title like CONCAT('%', #{word}, '%') OR
-            content like CONCAT('%', #{word}, '%')
-    </if>
-    <choose>
-      <when test="order == 'title'">ORDER BY title ASC</when>
-      <when test="order == 'createDate'">ORDER BY cre_date ASC</when>
-      <when test="order == 'views'">ORDER BY views DESC</when>
-      <otherwise>ORDER BY bno DESC</otherwise>
-    </choose>
-      LIMIT #{startIndex}, #{pageSize}
-  </select>
+ 
   
-  <select id="countAll" parameterType="string" resultType="int">
-      SELECT count(bno)  
-      FROM board2
-    <if test="value != null and value != ''">
-      WHERE title like CONCAT('%', #{value}, '%') OR
-            content like CONCAT('%', #{value}, '%')
-    </if>
-  </select>
+  
   
   <select id="check" parameterType="int" resultType="int">
       SELECT id  
@@ -74,6 +57,11 @@
         ,content=#{content}
       WHERE bno=#{no}
   </update>
+  
+   <select id="getVoteTable" parameterType="map" resultMap="VoteVoMap">
+      SELECT * FROM voteTable Order By VTno desc
+      LIMIT #{startIndex}, #{pageSize} 
+  </select>
   
 </mapper>
 

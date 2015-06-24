@@ -22,6 +22,8 @@ public interface VoteDao {
   int update(VoteVo vote);
   
   int check(int id);
+  
+  List<VoteVo> getVoteTable(Map<String,Object> paramMap);
 
 }
 

@@ -108,6 +108,7 @@ function refreshBoardTable() {
 		      				rows[i].title + '</a></td>\n' +
 		      				'<td>' + rows[i].createDate + '</td>\n')
 		      		.appendTo(table);
+		      alert("1");
 		    }
 		},
 		error: function(xhr, textStatus, errorThrown) {

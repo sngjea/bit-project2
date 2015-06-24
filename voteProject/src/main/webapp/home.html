@@ -14,45 +14,18 @@
 	<script src="js/naverLogin.js"></script>
 	<script src="js/sub_naverLogin.js"></script>
 	<script src="js/jquery.cookie.js"></script>
-
+<script src="js/fblogin.js"></script>
 <script>
  var checkCookie = $.cookie("state_token");
 	    if(!checkCookie) {
 	    	location.href = "http://192.168.10.65:9999/voteProject";
 	    }
 	    
-function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split('=');
-        if (decodeURIComponent(pair[0]) == variable) {
-            return decodeURIComponent(pair[1]);
-        }
-    }
-    console.log('Query variable %s not found', variable);
-}
+alert(JSON.stringify(session));
 
-if(getQueryVariable("fb") == "") {
-	getQueryVariable("id")
-    $.ajax('http://192.168.10.65:3000/fb', {
-        method: 'post',
-        dataType: 'json',
-        data: {
-            id :  getQueryVariable("id"),
-            email : getQueryVariable("email")
-        },
-        success: function(result) {
-            console.log("ok")
-           
-        },
-        error: function(xhr, textStatus, errorThrown) {
-            alert('작업을 완료할 수 없습니다.\n' +
-                '잠시 후 다시 시도하세요.\n' +
-                '계속 창이 뜬다면, 관리자에 문의하세요.(사내번호:1112) mysql errer');
-        }
-    });
-}
+
+		
+		
 </script>
 </head>
 <style>
@@ -117,7 +90,7 @@ h1 {
 					<li><a href="/file">Documents</a></li>
 					<li><a href="/faq">FAQ</a></li>
 					<li><a href="/mypage">MyPage</a></li>
-					<li><a onclick="logoutNaver()"href="http://192.168.10.65:9999/voteProject" type="button btn-default">Logout</a></li>
+					<li><a onclick="logoutNaver()"href="http://192.168.10.68:9999/voteProject/vote/logout.do" type="button btn-default">Logout</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -215,11 +188,14 @@ h1 {
 							internal network from outside access and use of confidential data
 							that you may share left heart.</p>
 					</div>
+					<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">공유하기</a>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript">
+</script>
 				</div>
 			</div>
 			<footer>
 				<p class="pull-right">
-					<a href="#"><span style="color: black">Back to top</span></a>
+					<a href="http://192.168.10.68:9999/voteProject/registtovote.html"><span style="color: black">Back to top</span></a>
 				</p>
 				<p>&copy; PRM 2014</p>
 			</footer>

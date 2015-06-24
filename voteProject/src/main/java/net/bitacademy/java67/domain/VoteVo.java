@@ -21,7 +21,6 @@ public class VoteVo implements Serializable {
 	protected String    	photoTag1;
 	protected String    	photoTag2;
 	protected List<String>  comment;
-	
 	protected Date    		createDate;
 	protected int     		views;
 	protected String  		userID;

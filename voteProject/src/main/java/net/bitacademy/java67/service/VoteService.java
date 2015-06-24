@@ -28,6 +28,14 @@ public class VoteService {
   @Autowired
   BoardLogDao boardLogDao;
   
+  public List<VoteVo> getVoteTable(int startIndex, int pageSize) {
+	  
+	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+	    sqlParams.put("startIndex", startIndex);
+	    sqlParams.put("pageSize", pageSize);
+	    
+	  return voteDao.getVoteTable(sqlParams);
+  }
   
   public int add(VoteVo vote, String ip) {
     
