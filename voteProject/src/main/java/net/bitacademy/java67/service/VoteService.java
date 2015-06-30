@@ -37,6 +37,16 @@ public class VoteService {
 	  return voteDao.getVoteTable(sqlParams);
   }
   
+  public List<VoteVo> getMyVoteTable(int startIndex, int pageSize, String userID) {
+	  
+	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+	  sqlParams.put("startIndex", startIndex);
+	  sqlParams.put("pageSize", pageSize);
+	  sqlParams.put("userID", userID);
+	  
+	  return voteDao.getMyVoteTable(sqlParams);
+  }
+  
   public int add(VoteVo vote, String ip) {
     
 	
@@ -52,25 +62,21 @@ public class VoteService {
     return count;
   }
   
-//  public List<BoardVo> list(
-//      int startIndex, int pageSize, String word, String order) {
-//    
-//    HashMap<String,Object> sqlParams = new HashMap<String,Object>();
-//    sqlParams.put("startIndex", startIndex);
-//    sqlParams.put("pageSize", pageSize);
-//    sqlParams.put("word", word);
-//    sqlParams.put("order", order);
-//    
-//    return voteDao.selectList(sqlParams);
-//  }
-//  
-//  public int size(String word) {
-//    return voteDao.countAll(word);
-//  }
-//  
-//  public BoardVo get(int no) {
-//    return voteDao.selectOne(no);
-//  }
+  
+  public VoteVo selectOne(int no, String ip) {
+	  
+	  
+	  
+	   
+	  
+	  BoardLogVo boardLog = new BoardLogVo();
+	  boardLog.setIp(ip);
+	  boardLog.setActionType(BoardLogVo.ACTION_INSERT);
+	  boardLog.setBoardNo(no);
+	  boardLogDao.insert(boardLog);
+	  return voteDao.selectOne(no);
+  }
+  
   
   public int remove(int no, String ip) {
     int count = voteDao.delete(no);
@@ -86,6 +92,13 @@ public class VoteService {
   
   public int change(VoteVo vote, String ip) {
     int count = voteDao.update(vote);
+    System.out.println(vote.getNo());
+	  System.out.println(vote.getTitle());
+	  System.out.println(vote.getPhotoOne());
+	  System.out.println(vote.getPhotoTwo());
+	  System.out.println(vote.getPhotoTag1());
+	  System.out.println(vote.getPhotoTag2());
+	  System.out.println(vote.getContent());
     
     BoardLogVo boardLog = new BoardLogVo();
     boardLog.setIp(ip);
@@ -96,11 +109,11 @@ public class VoteService {
     return count;
   }
   
-  public boolean check(VoteVo vote, String ip) {
+  public void check(VoteVo vote, String ip) {
 	  System.out.println(vote.getNo());
+	  System.out.println(vote.getUserID());
 	  
 	 
-	  boolean v =false;
 	  
 	  BoardLogVo boardLog = new BoardLogVo();
 	    boardLog.setIp(ip);
@@ -108,16 +121,19 @@ public class VoteService {
 	    boardLog.setBoardNo(vote.getNo());
 	    boardLogDao.insert(boardLog);
 	  try{
-	    int count = voteDao.check(vote.getNo());
+	    voteDao.userIDcheck(vote);
 	    System.out.println("voteServise, setTrue couse query doen't excute exception ");
-	    v=true;
 	    
 	  } catch (Exception e) {
-		  
+		  if(e.getMessage().contains("Duplicate entry")) {
+			  System.out.println("Duplicate entry");
+			  return;
+		  }
+		  System.out.println("Execute Exception ");
 	  }
 	  
-	  return v ;
   }
+
 }
 
 

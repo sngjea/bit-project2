@@ -50,6 +50,18 @@ public class VoteController {
 	      
 	  }
 	  
+	  @RequestMapping("/sessionCheck") 
+	  public String sessionCheck(HttpSession session) {
+		  System.out.println("sessionCheck executing");
+		  System.out.println(session.getAttribute("userID"));
+		  if (session.getAttribute("userID") != null) {
+			  return "redirect:../home.html";
+		  }
+		  return "redirect:../";
+	  }
+		  
+	  
+	
 	  @RequestMapping("/logout")
 	  public String logout(HttpSession session) {
 		  Gson gson = new Gson();
@@ -68,6 +80,7 @@ public class VoteController {
 			MultipartFile photo2,
 			VoteVo vote,
 			HttpServletRequest request,
+			HttpSession session,
 			Model model) throws Exception {
 
 		System.out.println(vote.getTitle());
@@ -79,14 +92,21 @@ public class VoteController {
 		System.out.println(photo1);
 		System.out.println(photo2);
 		String originalFilename01 = photo1.getOriginalFilename();
-
+		vote.setUserID((String)session.getAttribute("userID"));
 		String fileName1 = createFileName(photo1);
 		String fileName2 = createFileName(photo2);
 
 		photo1.transferTo(new File(ctx.getRealPath("/upload") + "/" + fileName1));
 		photo2.transferTo(new File(ctx.getRealPath("/upload") + "/" + fileName2));
+		
+		if(session.getAttribute("userID") == null) {
+			return "redirect:./?erorr:10";
+		}
+		
+		vote.setUserID((String)session.getAttribute("userID"));
 		vote.setPhotoOne(fileName1);
 		vote.setPhotoTwo(fileName2);
+		
 		voteService.add(vote, request.getRemoteAddr());
 
 		model.addAttribute("category", vote.getCategory());
@@ -97,8 +117,8 @@ public class VoteController {
 		model.addAttribute("photoTag1", vote.getPhotoTag1());
 		model.addAttribute("photoTag2", vote.getPhotoTag2());
 		model.addAttribute("creatDate", vote.getCreateDate());
-
-		return "vote/clicktovote";
+		System.out.println(vote.getNo());
+		return "redirect:../showMyVote.html?no="+vote.getNo();
 	}
 
 	int count = 0;
@@ -120,15 +140,17 @@ public class VoteController {
 		return ++count;
 	}
 
-	@RequestMapping("/check")
-	public String check(VoteVo vote, HttpServletRequest request) throws Exception {
-		System.out.println(vote.getNo());
-		Boolean i = voteService.check(vote, request.getRemoteAddr());
-
-		if(i) {
-			System.out.println("뉴비 환영 ㅋ");
-		}
-		return "redirect:../home";
+	@RequestMapping("/IDcheck")
+	public String check(VoteVo vote, HttpServletRequest request,
+			HttpSession session) throws Exception {
+		
+		System.out.println("into IDcheck");
+		System.out.println(vote.getUserID());
+		voteService.check(vote, request.getRemoteAddr());
+		
+		session.setAttribute("userID", vote.getUserID());
+		System.out.println("session's userID: " + session.getAttribute("userID"));
+		return "redirect:../home.html";
 	}
 
 	@RequestMapping("/getVoteTable")
@@ -153,6 +175,31 @@ public class VoteController {
 
 
 	}
+	@RequestMapping("/getMyVoteTable")
+	public Object getMyVoteTable(
+			@RequestParam(required=false,defaultValue="1") int pageNo,
+			@RequestParam(required=false,defaultValue="3") int pageSize,
+			HttpSession session
+			) throws Exception {
+		System.out.println("into getMyssVoteTable function");
+		
+		//	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+		//	    sqlParams.put("tno",tno);
+		System.out.println(session.getAttribute("userID"));
+		HashMap<String,Object> responseData = new HashMap<String,Object>();
+		
+		responseData.put("status", "success");
+		responseData.put("data",
+				voteService.getMyVoteTable(
+						getStartIndexOfPage(pageNo, pageSize),
+						pageSize,
+						(String)session.getAttribute("userID")));
+		
+		System.out.println("2");
+		return responseData;
+		
+		
+	}
 	private int getStartIndexOfPage(int pageNo, int pageSize) {
 		    return (pageNo - 1) * pageSize;
 		  }  
@@ -166,17 +213,37 @@ public class VoteController {
 //	  }
 
 		@RequestMapping("/change")
-		public String change(VoteVo vote, HttpServletRequest request) throws Exception {
+		public String change(VoteVo vote, HttpServletRequest request,
+				MultipartFile photo1,
+				MultipartFile photo2
+				) throws Exception {
+			String fileName1 = createFileName(photo1);
+			String fileName2 = createFileName(photo2);
+			photo1.transferTo(new File(ctx.getRealPath("/upload") + "/" + fileName1));
+			photo2.transferTo(new File(ctx.getRealPath("/upload") + "/" + fileName2));
+			vote.setPhotoOne(fileName1);
+			vote.setPhotoTwo(fileName2);
 			voteService.change(vote, request.getRemoteAddr());
 			System.out.println("in");
-			return "redirect:list.do";
+			return "redirect:../showMyVote.html?no="+vote.getNo();
+		}
+		@RequestMapping("/selectOne")
+		public Object selectOne(String no, HttpServletRequest request) throws Exception {
+			
+			System.out.println(" in selectOne");
+			HashMap<String,Object> responseData = new HashMap<String,Object>();
+			   responseData.put("status", "success");
+			   System.out.println();
+			    responseData.put("data", voteDao.selectOne(Integer.parseInt(no)));
+			return responseData;
 		}
 
 		@RequestMapping("/delete")
-		public String delete(int no, HttpServletRequest request) throws Exception {
-			voteService.remove(no, request.getRemoteAddr());
-
-			return "redirect:list.do";
+		public String delete(String no, HttpServletRequest request) throws Exception {
+			System.out.println("in delete");
+			System.out.println("in delete no : "+ no );
+			voteService.remove(Integer.parseInt(no), request.getRemoteAddr());
+			return "redirect:../myVote.html";
 		}
 
 		//  @RequestMapping("/vdetail")

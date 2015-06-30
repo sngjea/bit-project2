@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class UserVo implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  protected int         userNo;
+  protected String         userNo;
   protected String      name;
   protected String      email;
   protected String      tel;
@@ -17,13 +17,14 @@ public class UserVo implements Serializable {
   protected String      twitter;
   protected String      password;
   
-  public int getUserNo() {
-    return userNo;
-  }
-  public void setUserNo(int userNo) {
-    this.userNo = userNo;
-  }
-  public String getName() {
+ 
+  public String getUserNo() {
+	return userNo;
+}
+public void setUserNo(String userNo) {
+	this.userNo = userNo;
+}
+public String getName() {
     return name;
   }
   public void setName(String name) {

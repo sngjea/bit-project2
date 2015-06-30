@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <title>Home</title>
 
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -17,26 +16,22 @@
 <script type="text/javascript"
 	src="http://malsup.github.com/jquery.cycle.all.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-
-		$('#headerRotate').cycle({
-			fx : 'fade',
-			timeout : 2500
-		});
-	});
 </script>
-
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/jquery.cookie.js"></script>
-<script>
+<script src="js/naverLogin.js"></script>
+<script src="js/fblogin.js"></script>
+<script src="js/postRequestToJS.js"></script>
+<script src="js/sub_naverLogin.js"></script>
+
+ <script>
  var checkSession = $.cookie("state_token");
+ alert(checkSession)
 	    if(checkSession != null) {
 	    	location.href = "http://192.168.10.68:9999/voteProject/home.html";
 	    }
-</script>
-<script src="js/naverLogin.js"></script>
-<script src="js/fblogin.js"></script>
-<script src="js/sub_naverLogin.js"></script>
+</script> 
+
 
 
 </head>
@@ -120,11 +115,11 @@ html,body {
 
 	<div id="headerRotate">
 		<div
-				style="background: url('famous/images/30.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+				style="background: url('images/30.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
 		<div
-				style="background: url('famous/images/31.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+				style="background: url('images/31.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
 		<div
-				style="background: url('famous/images/40.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+				style="background: url('images/40.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
 	</div>
 
 </body>

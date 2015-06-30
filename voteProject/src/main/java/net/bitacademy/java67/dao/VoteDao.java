@@ -21,9 +21,12 @@ public interface VoteDao {
   
   int update(VoteVo vote);
   
-  int check(int id);
+  VoteVo userIDcheck(VoteVo vote);
   
   List<VoteVo> getVoteTable(Map<String,Object> paramMap);
+  
+  List<VoteVo> getMyVoteTable(Map<String,Object> paramMap);
+
 
 }
 

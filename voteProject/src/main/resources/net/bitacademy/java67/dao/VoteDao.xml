@@ -35,31 +35,38 @@
  
   
   
+   <update id="update" parameterType="VoteVo">
+      UPDATE voteTable SET 
+        title=#{title} 
+        ,content=#{content}
+        ,photo1=#{photoOne}
+        ,photo2=#{photoTwo}
+        ,photoTag1=#{photoTag1}
+        ,photoTag2=#{photoTag2}
+      WHERE Vtno=#{no}
+  </update>
   
-  <select id="check" parameterType="int" resultType="int">
-      SELECT id  
-      FROM id where id=#{no}
-  </select>
+  <insert id="userIDcheck" parameterType="VoteVo">
+      INSERT INTO id (id) VALUES (#{userID})
+  </insert>
   
   <select id="selectOne" parameterType="int" resultMap="VoteVoMap">
-      SELECT bno, title, content, cre_date, views 
-      FROM board2 
-      WHERE bno=#{no}
+      SELECT * from voteTable
+      WHERE Vtno=#{no}
   </select>
   
   <delete id="delete" parameterType="int">
-      DELETE FROM board2 WHERE bno=#{value}
+      DELETE FROM voteTable WHERE Vtno=#{no}
   </delete>
   
-  <update id="update" parameterType="VoteVo">
-      UPDATE board2 SET 
-        title=#{title} 
-        ,content=#{content}
-      WHERE bno=#{no}
-  </update>
   
    <select id="getVoteTable" parameterType="map" resultMap="VoteVoMap">
       SELECT * FROM voteTable Order By VTno desc
+      LIMIT #{startIndex}, #{pageSize} 
+  </select>
+  
+   <select id="getMyVoteTable" parameterType="map" resultMap="VoteVoMap">
+      SELECT * FROM voteTable WHERE userID = #{userID} Order By VTno desc
       LIMIT #{startIndex}, #{pageSize} 
   </select>
   
