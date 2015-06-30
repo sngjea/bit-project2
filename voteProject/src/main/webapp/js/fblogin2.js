@@ -17,7 +17,7 @@ function checkLoginState() {
 	});
 }
 
-function loginx() {
+function login() {
 	FB.init({
 		appId      : '1625255044379083',
 		cookie     : true,  // enable cookies to allow the server to access 
@@ -51,15 +51,11 @@ function testAPI() {
 	FB.api('/me', function(response) {
 		$.removeCookie("state_token");
 		$.cookie("state_token", generateState() );
-		getUserInfo();
+		window.location.replace("http://192.168.10.68:9999/voteProject/home.html?fb=&id=" + response.id + "&email=" + response.email);
 	});
 }
 
-function generateState() {
 
-    var oDate = new Date();
-    return oDate.getTime();
-}
 
 function loginFB(){
 	FB.login(function(response) {
@@ -79,10 +75,12 @@ function loginFB(){
 
 function getUserInfo() {
 	FB.api('/me', function(response) {
-		alert(response.email)
-		post_to_url("http://192.168.10.68:9999/voteProject/vote/IDcheck.do",{
-			'userID' : response.email
-		})
+
+		//response.name       - User Full name
+		//response.link       - User Facebook URL
+		//response.username   - User name
+		//response.id         - id
+		//response.email      - User email
 
 	});
 
@@ -99,21 +97,6 @@ function facebook_send_message() {
 
     });
 }
-function post_to_url(path, params, method) {
-    method = "post";  //method 부분은 입력안하면 자동으로 post가 된다.
-    var form = document.createElement("form");
-    form.setAttribute("method", method);
-    form.setAttribute("action", path);
-    //input type hidden name(key) value(params[key]);
-    for(var key in params) {
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("type", "hidden");
-        hiddenField.setAttribute("name", key);
-        hiddenField.setAttribute("value", params[key]);
-        form.appendChild(hiddenField);
-    }
-    document.body.appendChild(form);
-    form.submit();
-}
+
 
 
