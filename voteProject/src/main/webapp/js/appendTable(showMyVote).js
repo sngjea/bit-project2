@@ -7,7 +7,7 @@ function appendTable(table,num,size) {
 	if(typeof num  == 'number' ){
 	 pageSize = size;
 	}
-	
+	alert(QueryString()["no"]);
 	console.log(typeof num);
 	console.log(num);
 	 if(typeof num  == 'number') {
@@ -69,6 +69,7 @@ function appendTable(table,num,size) {
 	        +'<br>'
 	        +'<br>'
 	        +'<br>'
+	        +'			<a class="fb-share-button" data-layout="button_count" onclick="newPopup(\'http://192.168.10.68:9999/voteProject/linkVote.html?no='+QueryString()["no"]+'\')" src="https://developers.facebook.com/docs/plugins/"></a>'			
 	        +'			<a href="modifyVote.html?no='+QueryString()["no"]+'"  class="btn btn-sm btn-info pull-right">수정</a>'
 	        +' 			<a href="home.html" class="btn btn-sm btn-default pull-right">목록</a>'
 	        +'                </div>'
@@ -76,7 +77,6 @@ function appendTable(table,num,size) {
 	        +'        </div>'
 	                ).appendTo(table); 
 		    }		    
-		    
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			alert(JSON.stringify(xhr));

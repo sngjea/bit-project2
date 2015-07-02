@@ -175,7 +175,6 @@ function logoutNaver() {
         var aa = a;
         console.log("parameter " , aa);
     });
-alert("실행")
     $.removeCookie("state_token");
 }
 

@@ -229,7 +229,7 @@ public class VoteController {
 		}
 		@RequestMapping("/selectOne")
 		public Object selectOne(String no, HttpServletRequest request) throws Exception {
-			
+			System.out.println("no : " + no);
 			System.out.println(" in selectOne");
 			HashMap<String,Object> responseData = new HashMap<String,Object>();
 			   responseData.put("status", "success");

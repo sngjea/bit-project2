@@ -81,6 +81,7 @@ function appendTable(table,num,size) {
 	        +'           <textarea name="formtextarea1" rows="2" onFocus="this.blur()" class="col-sm-12 col-md-12">'+rows[i].content
 	        +'           </textarea>'
 	        +'                </div>'
+	        +'						
 	        +'            </div>'
 	        +'        </div>'
 	                ).appendTo(table); 

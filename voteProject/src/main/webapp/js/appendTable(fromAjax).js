@@ -66,9 +66,9 @@ function appendTable(table,num,size) {
 						+'        </div>'
 				).appendTo(table); 
 				
-				console.log(FB.XFBML.parse(table));
+				
 			}		    
-
+			console.log(FB.XFBML.parse(table));
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			alert(JSON.stringify(xhr))

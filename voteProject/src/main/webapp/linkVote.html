@@ -56,67 +56,17 @@
 
     <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12-offset-5 col-sm-6-offset-5">
+		<div id="in-body"></div>
 
-            <div class="jumbotron">
-                <h4><strong>
-                    <center>vote fighter</center>
-                </strong></h4>
-                <hr>
-                <p>
-                <center>I registered votes</center>
-                </p>
-            </div>
-
-            <div class="jumbotron">
-                <!--<h3>노트북</h3>-->
-                <!--<h5><label>RegistDate</label> 2015-04-14</h5>-->
-                <!--<button type="button" class="close remove" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>-->
-                <!--<a href="modifyVote.html" class="close update" aria-hidden="true"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>-->
-                <br>
-
-                <h2 type="title" class="form-control">여자친구한테 노트북을 사주려고하는데 추천좀ㅜ</h2>
-
-                <div class="bs-example">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6">
-                            <div class="thumbnail">
-                                <img src="images/profile.png">
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6">
-                            <div class="thumbnail">
-                                <img src="images/profile.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6">
-                            <center><h3><span class="label label-info">Count</span></h3></center>
-                            <div class="caption">
-                                <h2 type="title" class="form-control"><strong>엘지그램</strong></h2>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6">
-                            <center><h3><span class="label label-info">Count </span></h3></center>
-                            <div class="caption">
-                                <h2 type="title" class="form-control"><strong>엘지그램</strong></h2>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12">
-                            <textarea name="formtextarea1" rows="2" onFocus="this.blur()" class="col-xs-12 col-sm-12">스트 폼 필드 스크롤 글상자에 마우스로 드래그하여 Del키를 눌러보기도 하고, 커서로 틀릭하여 보세요. 지워지지도 않고, 커서가 들어가 있지도 않을 것입니다.
-                            </textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!--/row-->
 
     <hr>
-
+<script src="js/FBPopUp.js">
+</script>
     <footer>
-        <p>&copy; Company 2014</p>
+        <p onclick="newPopup('http://naver.com')">&copy; Company 2014</p>
     </footer>
 
 </div>
@@ -131,7 +81,12 @@
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
+<script src="js/jquery-1.11.2.js"></script>
+	<script src="js/queryStringParser.js"></script>
+	<script src="js/appendTable(linkVote).js"></script>
+	 <script type="text/javascript">
+		appendTable($("#in-body"), 1, 1);
+	</script> 
 <script src="offcanvas.js"></script>
 </body>
 </html>

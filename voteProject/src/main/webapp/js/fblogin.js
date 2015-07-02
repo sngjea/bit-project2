@@ -55,11 +55,7 @@ function testAPI() {
 	});
 }
 
-function generateState() {
 
-    var oDate = new Date();
-    return oDate.getTime();
-}
 
 function loginFB(){
 	FB.login(function(response) {
@@ -79,7 +75,7 @@ function loginFB(){
 
 function getUserInfo() {
 	FB.api('/me', function(response) {
-		alert(response.email)
+		
 		post_to_url("http://192.168.10.68:9999/voteProject/vote/IDcheck.do",{
 			'userID' : response.email
 		})
@@ -116,4 +112,8 @@ function post_to_url(path, params, method) {
     form.submit();
 }
 
+function generateState() {
 
+    var oDate = new Date();
+    return oDate.getTime();
+}
