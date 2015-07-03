@@ -25,7 +25,9 @@ function appendTable(table,num,size) {
 				return;
 			}
 			var rows = result.data;
-
+//divx1+num로 countJAX의 각 div부모테이블을 지정함
+//count1+row[i].no로 각 count의 값을 지정함 
+//num에 rows[i].no를넣도록 하드코딩 해놧음으로 row[i]와 num은 결국 같은 값을 가 
 			for(var i in rows) {
 				console.log(rows[i])
 				$('<div>')
@@ -52,9 +54,8 @@ function appendTable(table,num,size) {
 						+'                        <h2 type="title" class="form-control">'+rows[i].photoTag1+'</h2>'
 						+'                    </div>'
 						+'                </div>'
-						+'                <div id="divx2" class="col-xs-6 col-sm-6">'
-						+'                    <center><h3><span  class="vote" style="display: none;" id="count2" onclick="countJax(document.getElementById(\'divx2\'),2)"class="label label-info">Count  '+rows[i].voteCount2+'</span></h3></center>'
-						+' 					  <center><h3><button  id="vote1" class="label label-info vote">투표하기</button></h3></center>'
+						+'                <div id="divx2'+rows[i].no+'" class="col-xs-6 col-sm-6">'
+						+' 					  <center id="count2'+rows[i].no+'" ><h3><span  onclick="countJax(document.getElementById(\'divx2'+rows[i].no+'\'),2,'+rows[i].no+')" class="label label-info">투표하기</span></h3></center>'
 						+'                    <div class="caption">'
 						+'                        <h2 type="title" class="form-control">'+rows[i].photoTag2+'</h2>'
 						+'                    </div>'

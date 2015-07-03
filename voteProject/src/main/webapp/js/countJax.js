@@ -20,30 +20,26 @@ function countJax(table,voteCount,num) {
 			
 			
 			if(voteCount == 1){
-				alert(table);
-				alert(rows);
-				alert(document.getElementById('divx1'));
 				document.getElementById('count1'+num).remove();
 				for(var i in rows) {
 					console.log(rows[i])
 					$('<center>')
 					.attr('id', 'count1'+rows[i].no)
 					.html(
-'<h3><span  onclick="countJax(document.getElementById(\'divx1\'),1,'+rows[i].no+')"class="label label-info">Count  '+rows[i].voteCount1+'</span></h3>'
+'<h3><span  class="label label-info">Count  '+rows[i].voteCount1+'</span></h3>'
 					).prependTo(table); 
 				}		    
 			}
 
 			if(voteCount == 2){
-				alert('voteCount2');
-				table.removeChild(document.getElementById('count2'));
+				document.getElementById('count2'+num).remove();
 				for(var i in rows) {
 					console.log(rows[i])
-					$('<div>')
-					.attr('class', 'dataRow row jumbotron ')
+					$('<center>')
+					.attr('id', 'count2'+rows[i].no)
 					.html(
-							'<center><h3><span id="count2"  class="label label-info">Count  '+rows[i].voteCount2+'</span></h3></center>'
-					).appendTo(table); 
+'<h3><span  class="label label-info">Count  '+rows[i].voteCount2+'</span></h3>'
+							).prependTo(table); 
 				}		    
 			}
 		},
