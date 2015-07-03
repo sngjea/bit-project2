@@ -69,6 +69,13 @@
       SELECT * FROM voteTable WHERE userID = #{userID} Order By VTno desc
       LIMIT #{startIndex}, #{pageSize} 
   </select>
+   
+   <update id="voteCount1" parameterType='int'>
+      UPDATE voteTable set voteCount1= voteCount1 +1 where Vtno= #{Vtno}
+  </update>
+   <update id="voteCount2" parameterType='int' >
+      UPDATE voteTable set voteCount2= voteCount2 +1 where Vtno= #{Vtno}
+  </update>
   
 </mapper>
 

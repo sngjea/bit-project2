@@ -20,6 +20,8 @@ public interface BoardDao {
   
   int update(BoardVo board);
 
+
+  
 }
 
 

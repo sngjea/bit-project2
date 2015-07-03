@@ -27,7 +27,9 @@ public interface VoteDao {
   
   List<VoteVo> getMyVoteTable(Map<String,Object> paramMap);
 
-
+  int voteCount1(int voteCount1);
+  
+  int voteCount2(int voteCount2);
 }
 
 

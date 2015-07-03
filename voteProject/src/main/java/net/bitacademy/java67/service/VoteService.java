@@ -133,7 +133,36 @@ public class VoteService {
 	  }
 	  
   }
+  
+  public int voteCount1(int voteCount1, String ip) {
+	  System.out.println(voteCount1);
+	  
+	  BoardLogVo boardLog = new BoardLogVo();
+	  boardLog.setIp(ip);
+	  boardLog.setActionType(BoardLogVo.ACTION_UPDATE);
+	  boardLog.setBoardNo(voteCount1);
+	  boardLogDao.insert(boardLog);
+		
+	  return  voteDao.voteCount1(voteCount1);
+	  
+  }
+  
+  public int voteCount2(int voteCount2, String ip) {
+	  System.out.println(voteCount2);
+	  
+	  
+	  
+	  BoardLogVo boardLog = new BoardLogVo();
+	  boardLog.setIp(ip);
+	  boardLog.setActionType(BoardLogVo.ACTION_UPDATE);
+	  boardLog.setBoardNo(voteCount2);
+	  boardLogDao.insert(boardLog);
+	  
+	  return voteDao.voteCount2(voteCount2);
+	  
+  }
 
+  
 }
 
 
