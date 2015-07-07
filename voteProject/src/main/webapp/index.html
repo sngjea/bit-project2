@@ -4,15 +4,7 @@
 
 
 <head lang="en">
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        $('#headerRotate').cycle({
-            fx : 'fade',
-            timeout : 2500
-        });
-    });
-</script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <meta charset="UTF-8">
 <title>Home</title>
 
@@ -24,9 +16,11 @@
 	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="myfolder/jquery.cycle.all.js"></script>
 <script type="text/javascript"
 	src="http://malsup.github.com/jquery.cycle.all.js"></script>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
 <script src="js/jquery.cookie.js"></script>
 <script src="js/fblogin.js"></script>
 
@@ -37,7 +31,15 @@
 	    	location.href = "http://192.168.10.68:9999/voteProject/home.html";
 	    }
 </script> 
+<script type="text/javascript">
+    $(document).ready(function() {
 
+        $('#headerRotate').cycle({
+            fx : 'fade',
+            timeout : 2500
+        });
+    });
+</script>
 
 
 </head>

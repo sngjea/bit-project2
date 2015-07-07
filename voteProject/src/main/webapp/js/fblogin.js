@@ -75,9 +75,11 @@ function loginFB(){
 
 function getUserInfo() {
 	FB.api('/me', function(response) {
-		
+		$.cookie("userName", response.name);
+		console.log(response)
 		post_to_url("http://192.168.10.68:9999/voteProject/vote/IDcheck.do",{
-			'userID' : response.email
+			'userID' : response.email,
+			'userName' : response.name
 		})
 
 	});

@@ -147,9 +147,11 @@ public class VoteController {
 
 		System.out.println("into IDcheck");
 		System.out.println(vote.getUserID());
+		System.out.println(vote.getUserName());
 		voteService.check(vote, request.getRemoteAddr());
 
 		session.setAttribute("userID", vote.getUserID());
+		session.setAttribute("userID", vote.getUserName());
 		System.out.println("session's userID: " + session.getAttribute("userID"));
 		return "redirect:../home.html";
 	}

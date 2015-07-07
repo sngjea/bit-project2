@@ -42,6 +42,7 @@
 
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -51,7 +52,7 @@
 	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="js/naverLogin.js"></script>
 <script src="js/sub_naverLogin.js"></script>
-<script src="js/jquery.cookie.js"></script>
+
 <script src="js/fblogin.js"></script>
 <script src="js/sub_naverLogin.js"></script>
 <script>
@@ -153,7 +154,7 @@ img {
 						<br> <img src="images/profile.png">
 
 						<h3>
-							<center>김일권</center>
+							<center id='userName'></center>
 						</h3>
 						<a  class="share_action_link prevent_react_replace _p" href="#"
 							data-ft="{&quot;tn&quot;:&quot;J&quot;,&quot;type&quot;:25}"
@@ -288,7 +289,11 @@ img {
 
 		})();
 	</script>
-
+<script>
+$(document).ready(function() {
+	document.querySelector('#userName').innerText = $.cookie("userName");
+});
+</script>
 
 </body>
 </html>

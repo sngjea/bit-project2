@@ -128,7 +128,7 @@
 
 
                 <h3>
-                    <center>김일권</center>
+                    <center id ="userName"></center>
                 </h3>
                 <br>
                 <a href="registVote.html" class="btn btn-lgrge btn-block btn-warning">Regist Vote</a>
@@ -239,6 +239,10 @@
 uploadPriview(document.getElementById("file1"),document.getElementById("priview1"));
 uploadPriview(document.getElementById("file2"),document.getElementById("priview2"));
 </script> -->
-
+<script>
+$(document).ready(function() {
+	document.querySelector('#userName').innerText = $.cookie("userName");
+});
+</script>
 </body>
 </html>

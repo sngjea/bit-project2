@@ -24,6 +24,7 @@ public class VoteVo implements Serializable {
 	protected Date    		createDate;
 	protected int     		views;
 	protected String  		userID;
+	protected String  		userName;
 	protected String  		content;
 	protected String  		category;
 	
@@ -135,6 +136,12 @@ public class VoteVo implements Serializable {
 	}
 	public void setUserID(String userID) {
 		this.userID = userID;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}  
 
 
