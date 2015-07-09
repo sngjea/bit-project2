@@ -27,6 +27,8 @@ public class VoteVo implements Serializable {
 	protected String  		userName;
 	protected String  		content;
 	protected String  		category;
+	protected String voteExit;
+	
 	
 	
 	
@@ -41,9 +43,19 @@ public class VoteVo implements Serializable {
 				+ ", photoTwo=" + photoTwo + ", title=" + title
 				+ ", photoTag1=" + photoTag1 + ", photoTag2=" + photoTag2
 				+ ", comment=" + comment + ", createDate=" + createDate
-				+ ", views=" + views + ", userID=" + userID + ", content="
-				+ content + ", category=" + category + "]";
+				+ ", views=" + views + ", userID=" + userID + ", userName="
+				+ userName + ", content=" + content + ", category=" + category
+				+ ", voteExit=" + voteExit + "]";
 	}
+
+	public String getVoteExit() {
+		return voteExit;
+	}
+
+	public void setVoteExit(String voteExit) {
+		this.voteExit = voteExit;
+	}
+
 	public String getCategory() {
 		return category;
 	}

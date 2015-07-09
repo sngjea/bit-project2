@@ -7,7 +7,6 @@ function appendTable(table,num,size) {
 	if(typeof num  == 'number' ){
 		pageSize = size;
 	}
-	alert(QueryString()["no"]);
 	console.log(typeof num);
 	console.log(num);
 	if(typeof num  == 'number') {
@@ -69,22 +68,21 @@ function appendTable(table,num,size) {
 						+'<br>'
 						+'<br>'
 						+'<br>'
-						+'			<a class="fb-share-button" data-layout="button_count" onclick="newPopup(\'http://192.168.10.68:9999/voteProject/linkVote.html?no='+QueryString()["no"]+'\')" src="https://developers.facebook.com/docs/plugins/"></a>'			
+						+'			<img onclick="newPopup(\'http://192.168.10.68:9999/voteProject/linkVote.html?no='+QueryString()["no"]+'\')" src="images/facebook.png" style="border: none; visibility: visible; width: 53px; height: 20px;">'			
 						+'			<a href="modifyVote.html?no='+QueryString()["no"]+'"  class="btn btn-sm btn-info pull-right">수정</a>'
 						+' 			<a href="home.html" class="btn btn-sm btn-default pull-right">목록</a>'
 						+'                </div>'
 						+'            </div>'
 						+'        </div>'
 				).appendTo(table); 
+//				onclick="newPopup(\'http://192.168.10.68:9999/voteProject/linkVote.html?no='+QueryString()["no"]+'\')" 
 				setBlogData(rows[i].photoTag1 , QueryString()["no"],1)
 				setBlogData(rows[i].photoTag2 , QueryString()["no"],2)
-
+//				$('iframe[name="fd86770cc"]').setAttribute('src',"http://www.facebook.com/v2.3/plugins/share_button.php?app_id=1625255044379083&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FxRlIuTsSMoE.js%3Fversion%3D41%23cb%3Df118067fac%26domain%3D192.168.10.68%26origin%3Dhttp%253A%252F%252F192.168.10.68%253A9999%252Ff1519fc284%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2F192.168.10.68%3A9999%2FvoteProject%2FlinkVote.html%3Fno%3D89&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey")
+				
 			}		    
 		},
 		error: function(xhr, textStatus, errorThrown) {
-			alert(JSON.stringify(xhr));
-			alert(JSON.stringify(errorThrown));
-			alert(textStatus)
 			alert('vote작업을 완료할 수 없습니다.\n' + 
 					'잠시 후 다시 시도하세요.\n' +
 			'계속 창이 뜬다면, 관리자에 문의하세요.(사내번호:1112)');
@@ -102,9 +100,7 @@ function setBlogData (query,no,dataNo) {
 			consle.log(JOSN.strnigify(result.data));
 		},
 		error: function(xhr, textStatus, errorThrown) {
-			alert('vote작업을 완료할 수 없습니다.\n' + 
-					'잠시 후 다시 시도하세요.\n' +
-			'계속 창이 뜬다면, 관리자에 문의하세요.(사내번호:1112)');
+			alert('setBlogData에 접속할 수 없습니다.');
 		}
 	});
 }

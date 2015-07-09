@@ -60,7 +60,15 @@ public class VoteController {
 		}
 		return "redirect:../";
 	}
-
+	
+	 @RequestMapping("/exitListUpdate")
+	  public Object exitListUpdate(int no, HttpServletRequest request) throws Exception {
+	    voteService.exitListUpdate(no, request.getRemoteAddr());
+	    System.out.println("in exitListUpdate");
+	    HashMap<String, Object> responseData = new HashMap<String, Object>();
+	    responseData.put("status", "success");
+	    return responseData;
+	  }
 
 
 	@RequestMapping("/logout")

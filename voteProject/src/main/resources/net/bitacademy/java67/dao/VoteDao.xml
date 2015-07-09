@@ -14,7 +14,7 @@
     <result column="title"    		property="title" />
     <result column="content"  		property="content" />
     <result column="cre_date" 		property="createDate" />
-    <result column="views"    		property="views" />
+    <result column="views"    		property="views" /> 
     <result column="photo1"    		property="photoOne" />
     <result column="photo2"    		property="photoTwo" />
     <result column="photoTag1"      property="photoTag1" />
@@ -77,6 +77,9 @@
       UPDATE voteTable set voteCount2= voteCount2 +1 where Vtno= #{Vtno}
   </update>
   
+  <update id="exitVoteUpdate" parameterType="int">
+	UPDATE voteTable SET voteExit ='종료됨' where Vtno= #{Vtno}
+</update>
 </mapper>
 
 

@@ -30,6 +30,8 @@ public interface VoteDao {
   int voteCount1(int voteCount1);
   
   int voteCount2(int voteCount2);
+  
+  int exitVoteUpdate(int no);
 }
 
 

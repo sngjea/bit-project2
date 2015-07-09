@@ -161,7 +161,20 @@ public class VoteService {
 	  return voteDao.voteCount2(voteCount2);
 	  
   }
+  
+  public int exitListUpdate(int no, String ip) {
+	    System.out.println("Service exitListUpdate1");
+	    int exitList = voteDao.exitVoteUpdate(no);
+	    
+	    System.out.println("Service exitListUpdate2");
+	    BoardLogVo boardLog = new BoardLogVo();
+	    boardLog.setIp(ip);
+	    boardLog.setActionType(BoardLogVo.ACTION_UPDATE);
+	    boardLog.setBoardNo(no);
+	    boardLogDao.insert(boardLog);
 
+	    return exitList;
+	  }
   
 }
 

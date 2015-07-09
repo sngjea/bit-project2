@@ -4,6 +4,22 @@
 // size는 페이지당 size를 나타냄
 //
 
+function voteExit() {
+	$.ajax("http://192.168.10.68:9999/voteProject/vote/exitListUpdate.do?no="+QueryString()["no"],{
+		method: 'get',
+		dataType: 'json',
+		success: function() {
+			window.location.href = "myVote.html";  
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			alert('vote작업을 완료할 수 없습니다.\n' + 
+				  '잠시 후 다시 시도하세요.\n' +
+				  '계속 창이 뜬다면, 관리자에 문의하세요.(사내번호:1112)');
+		}
+	})
+	
+}
+
 function appendTable(table,num,size) {
 	var pageSize = '';
 	if(typeof num  == 'number' ){
@@ -90,6 +106,7 @@ function appendTable(table,num,size) {
 				+'          </div>'
 				+'      </div>'
 				+'      <br>'
+				+'      <button type="button" onclick="voteExit()" class="btn btn-sm btn-danger" id="quitBtn">투표 종료</button>'
 				+'      <button class="btn btn-sm btn-info  pull-right" type="submit">등록</button>'
 				+'      <a href="home.html" class="btn btn-sm btn-default pull-right">목록</a>'
 				+'  </div>'
