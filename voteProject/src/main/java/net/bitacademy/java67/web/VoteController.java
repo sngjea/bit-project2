@@ -186,6 +186,30 @@ public class VoteController {
 
 
 	}
+	
+	@RequestMapping("/getHotVoteTable")
+	public Object getHotVoteTable(
+			@RequestParam(required=false,defaultValue="1") int pageNo,
+			@RequestParam(required=false,defaultValue="3") int pageSize
+			) throws Exception {
+		System.out.println("into getVoteTable function");
+		
+		//	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+		//	    sqlParams.put("tno",tno);
+		
+		HashMap<String,Object> responseData = new HashMap<String,Object>();
+		
+		responseData.put("status", "success");
+		responseData.put("data",
+				voteService.getVoteTable(
+						getStartIndexOfPage(pageNo, pageSize),pageSize));
+		
+		System.out.println("1");
+		return responseData;
+		
+		
+	}
+	
 	@RequestMapping("/getMyVoteTable")
 	public Object getMyVoteTable(
 			@RequestParam(required=false,defaultValue="1") int pageNo,

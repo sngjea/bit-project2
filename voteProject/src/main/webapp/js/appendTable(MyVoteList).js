@@ -36,6 +36,21 @@ function appendTable(table,num,size) {
 			var rows = result.data;
 		
 		    for(var i in rows) {
+		    	var aaa;
+				var bbb ='';
+				if(rows[i].voteExit == '진행중'){
+					console.log(rows[i].no + rows[i].voteExit);
+
+					aaa  = 'label label-success';
+					bbb =  ' ';
+
+				}else if (rows[i].voteExit == '종료됨'){
+					aaa=  'label label-danger';
+					bbb= '<div style="text-align:right;"><button class="btn btn-primary" data-target="#layerpop" data-toggle="modal" onclick="bringResultTable($(\'#bringResult\'),'+rows[i].no+')"> 결과보기 </button></div>';
+					console.log(rows[i].no + rows[i].voteExit);
+
+				}
+		    
 			console.log(rows[i])
 		    $('<div>')
 			.attr('class', 'dataRow row jumbotron')
@@ -51,8 +66,8 @@ function appendTable(table,num,size) {
 					+'	        </ul>'
 					+'    </div>'
 					+'	<div>'
-					+'     <h3>'
-					+'     <span style="" class="label label-success">'+rows[i].voteExit+'</span>'
+					+'     <h3>' +'     <span class="'+aaa+'">'+rows[i].voteExit+'</span><br>'
+					+' ' + bbb
 //					+'     <span class="label label-danger">'+rows[i].voteExit+' 종료됨</span>'
 					+'     </h3>'
 					+'	</div>'

@@ -17,30 +17,54 @@ function countJax(table,voteCount,num) {
 				rows[0]= result.data;
 			}
 
-			
-			
+
+
 			if(voteCount == 1){
 				document.getElementById('count1'+num).remove();
+
 				for(var i in rows) {
 					console.log(rows[i])
 					$('<center>')
 					.attr('id', 'count1'+rows[i].no)
 					.html(
-'<h3><span  class="label label-info">Count  '+rows[i].voteCount1+'</span></h3>'
+							'<h3><span  class="label label-info">Count  '+rows[i].voteCount1+'</span></h3>'
 					).prependTo(table); 
+					//-----------
+				}
+				document.getElementById('count2'+num).remove();
+				for(var j in rows) {
+					$('<center>')
+					.attr('id', 'count2'+rows[j].no)
+					.html(
+							'<h3><span  class="label label-info">Count  '+rows[j].voteCount2+'</span></h3>'
+					).prependTo(document.getElementById('divx2'+num)); 
 				}		    
 			}
 
 			if(voteCount == 2){
+
+
 				document.getElementById('count2'+num).remove();
 				for(var i in rows) {
 					console.log(rows[i])
 					$('<center>')
 					.attr('id', 'count2'+rows[i].no)
 					.html(
-'<h3><span  class="label label-info">Count  '+rows[i].voteCount2+'</span></h3>'
-							).prependTo(table); 
+							'<h3><span  class="label label-info">Count  '+rows[i].voteCount2+'</span></h3>'
+					).prependTo(table); 
+				}
+				//---------
+				
+				document.getElementById('count1'+num).remove();
+				for(var j in rows) {
+					console.log(rows[j])
+					$('<center>')
+					.attr('id', 'count2'+rows[j].no)
+					.html(
+							'<h3><span  class="label label-info">Count  '+rows[j].voteCount1+'</span></h3>'
+					).prependTo(document.getElementById('divx1'+num)); 
 				}		    
+
 			}
 		},
 		error: function(xhr, textStatus, errorThrown) {

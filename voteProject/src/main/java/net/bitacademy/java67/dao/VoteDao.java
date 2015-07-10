@@ -26,6 +26,8 @@ public interface VoteDao {
   List<VoteVo> getVoteTable(Map<String,Object> paramMap);
   
   List<VoteVo> getMyVoteTable(Map<String,Object> paramMap);
+  
+  List<VoteVo> getHotVoteTable(Map<String,Object> paramMap);
 
   int voteCount1(int voteCount1);
   

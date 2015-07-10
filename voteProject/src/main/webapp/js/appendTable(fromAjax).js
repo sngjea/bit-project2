@@ -61,8 +61,8 @@ function appendTable(table,num,size) {
 						+'                    </div>'
 						+'                </div>'
 						+'                <div class="col-xs-12 col-sm-12">'
-						+'           <textarea name="formtextarea1" rows="2" onFocus="this.blur()" class="col-sm-12 col-md-12">'+rows[i].content
-						+'           </textarea>'
+						+'           		<textarea name="formtextarea1" rows="2" onFocus="this.blur()" class="col-sm-12 col-md-12">'+rows[i].content
+						+'           		</textarea>'
 						+'                </div>'
 						+'            </div>'
 						+'        </div>'
@@ -70,7 +70,6 @@ function appendTable(table,num,size) {
 				
 				
 			}		    
-			console.log(FB.XFBML.parse(table));
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			alert(JSON.stringify(xhr))

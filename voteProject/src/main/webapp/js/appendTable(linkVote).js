@@ -7,7 +7,6 @@ function appendTable(table,num,size) {
 	if(typeof num  == 'number' ){
 	 pageSize = size;
 	}
-	alert(QueryString()["no"]);
 	console.log(typeof num);
 	console.log(num);
 	 if(typeof num  == 'number') {
