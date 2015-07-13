@@ -16,6 +16,18 @@ function checkLoginState() {
 		statusChangeCallback(response);
 	});
 }
+function logoutFB() {
+	
+    var state = $.cookie("state_token")
+
+    naver.logout(state, function (a) {
+        var aa = a;
+        console.log("parameter " , aa);
+    });
+    $.removeCookie("state_token");
+    //페이지를 옴긴다. 
+    location.href=domain+'/vote/logout.do'
+}
 
 function loginx() {
 	FB.init({

@@ -56,7 +56,6 @@
 <script src="js/fblogin.js"></script>
 <script src="js/sub_naverLogin.js"></script>
 <script>
-	var domain = "http://192.168.10.68:9999/voteProject";
 	var checkCookie = $.cookie("state_token");
 
 	if (!checkCookie) {
@@ -110,8 +109,7 @@ img {
 					<li class="active"><a href="home.html">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-					<li><a onclick="logoutNaver();"
-						href="http://192.168.10.68:9999/voteProject/vote/logout.do"
+					<li><a onclick="logoutFB();"
 						type="button btn-default">Log Out</a></li>
 				</ul>
 
