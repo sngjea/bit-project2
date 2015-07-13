@@ -37,7 +37,19 @@ function loginx() {
 		xfbml      : true,  // parse social plugins on this page
 		version    : 'v2.3' // use version 2.2
 	});
+	
+	FB.login(function(response) {
+		if (response.status === 'connected') {
+			testAPI();
+			getUserInfo();
 
+		} else if (response.status === 'not_authorized') {
+			// The person is logged into Facebook, but not your app.
+		} else {
+			// The person is not logged into Facebook, so we're not sure if
+			// they are logged into this app or not.
+		}
+	});
 
 	FB.getLoginStatus(function(response) {
 		statusChangeCallback(response);
@@ -88,6 +100,7 @@ function loginFB(){
 function getUserInfo() {
 	FB.api('/me', function(response) {
 		$.cookie("userName", response.name);
+		$.cookie("userUID", response.id);
 		console.log(response)
 		post_to_url("http://192.168.10.68:9999/voteProject/vote/IDcheck.do",{
 			'userID' : response.email,

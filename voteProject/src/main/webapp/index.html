@@ -1,36 +1,28 @@
-<!DOCTYPE html>
 <html>
-
-
-
 <head lang="en">
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <meta charset="UTF-8">
+<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <title>Home</title>
 
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript"	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <script type="text/javascript" src="myfolder/jquery.cycle.all.js"></script>
-<script type="text/javascript"
-	src="http://malsup.github.com/jquery.cycle.all.js"></script>
-
+<script type="text/javascript"	src="http://malsup.github.com/jquery.cycle.all.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/fblogin.js"></script>
+<link rel="icon" href="../favicon.ico">
 
- <script>
- 
+<script>
  var checkSession = $.cookie("state_token");
 	    if(checkSession != null) {
 	    	location.href = "http://192.168.10.68:9999/voteProject/home.html";
-	    }
-</script> 
+	    	}
+</script>
+
+
 <script type="text/javascript">
     $(document).ready(function() {
 
@@ -82,6 +74,7 @@ html,body {
 
 .form-signin .form-signin-heading,.form-signin .checkbox {
 	margin-bottom: 10px;
+	font-family: "Consolas", "Menlo", "Courier", monospace;
 }
 
 .form-signin .checkbox {
@@ -104,30 +97,38 @@ html,body {
 
 .h1 {
 	font-family: "맑은고딕", "Malgun Gothic", serif;
-} /
+}
 </style>
 <body>
 	<div id="login">
 		<div id="margin">
-			<div class="container">
+			<div class="container" style="width: auto; background-color: rgba(255,255,255,0.4); margin:30% 0 10% auto">
+
 				<form action="j_spring_security_check" method="post"
-					class="form-signin" role="form">
-					<br><br><br><br><br><br><br><br>
-					<h1 class="form-signin-heading"><span style="color: #FFA500"><h1><strong>Welcome to Poll</strong></h1></span></h1>
-					<h1 class="btn btn-lg btn-warning btn-block" onclick="loginx()">facebook</h1>
+					class="form-signin" role="form" >
+
+					<h1 class="form-signin-heading" style="text-align: center; text-shadow: 2px 2px blue;" ><span style="color:white"><strong>Pollynation</strong></span></h1>
+					<br>
+
+					<h1 class="btn btn-lg btn-primary btn-block" onclick="loginx()">for facebook</h1>
+
+					<h5 style="text-align: center"><a href="https://www.facebook.com/r.php"> facebook 가입하기</a> </h5>
 				</form>
-			</div>
+				</div>
+
 		</div>
 	</div>
 
 	<div id="headerRotate">
-		<div
-				style="background: url('images/30.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
-		<div
-				style="background: url('images/31.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
-		<div
-				style="background: url('images/40.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+
+				<!-- <div
+				style="background: url('images/61.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+				<div
+				style="background: url('images/55.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div> -->
+				<div
+				style="background: url('images/71.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
 	</div>
+
 
 </body>
 </html>

@@ -50,7 +50,7 @@ public class VoteController {
 		return "redirect:../home.html";
 
 	}
-
+	
 	@RequestMapping("/sessionCheck") 
 	public String sessionCheck(HttpSession session) {
 		System.out.println("sessionCheck executing");
@@ -159,7 +159,7 @@ public class VoteController {
 		voteService.check(vote, request.getRemoteAddr());
 
 		session.setAttribute("userID", vote.getUserID());
-		session.setAttribute("userID", vote.getUserName());
+		session.setAttribute("userName", vote.getUserName());
 		System.out.println("session's userID: " + session.getAttribute("userID"));
 		return "redirect:../home.html";
 	}
@@ -186,12 +186,13 @@ public class VoteController {
 
 
 	}
-	@RequestMapping("/getVoteEndTable")
+	@RequestMapping("/getMyVoteEndTable")
 	public Object getVoteEndTable(
 			@RequestParam(required=false,defaultValue="1") int pageNo,
-			@RequestParam(required=false,defaultValue="3") int pageSize
+			@RequestParam(required=false,defaultValue="3") int pageSize,
+			HttpSession session
 			) throws Exception {
-		System.out.println("into getVoteTable function");
+		System.out.println("into getMyVoteEndTable function");
 		
 		//	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
 		//	    sqlParams.put("tno",tno);
@@ -200,20 +201,21 @@ public class VoteController {
 		
 		responseData.put("status", "success");
 		responseData.put("data",
-				voteService.getVoteTable(
-						getStartIndexOfPage(pageNo, pageSize),pageSize));
+				voteService.getMyVoteEndTable(
+						getStartIndexOfPage(pageNo, pageSize),pageSize,(String)session.getAttribute("userID")));
 		
 		System.out.println("1");
 		return responseData;
 		
 		
 	}
-	@RequestMapping("/getVoteIngTable")
+	@RequestMapping("/getMyVoteIngTable")
 	public Object getVoteIngTable(
 			@RequestParam(required=false,defaultValue="1") int pageNo,
-			@RequestParam(required=false,defaultValue="3") int pageSize
+			@RequestParam(required=false,defaultValue="3") int pageSize,
+			HttpSession session
 			) throws Exception {
-		System.out.println("into getVoteTable function");
+		System.out.println("into getMyVoteIngTable function");
 		
 		//	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
 		//	    sqlParams.put("tno",tno);
@@ -222,9 +224,10 @@ public class VoteController {
 		
 		responseData.put("status", "success");
 		responseData.put("data",
-				voteService.getVoteTable(
-						getStartIndexOfPage(pageNo, pageSize),pageSize));
+				voteService.getMyVoteIngTable(
+						getStartIndexOfPage(pageNo, pageSize),pageSize,(String)session.getAttribute("userID")));
 		
+		System.out.println("1");
 		System.out.println("1");
 		return responseData;
 		

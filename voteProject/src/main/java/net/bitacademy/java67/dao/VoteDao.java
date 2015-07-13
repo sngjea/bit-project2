@@ -29,9 +29,9 @@ public interface VoteDao {
   
   List<VoteVo> getVoteTable(Map<String,Object> paramMap);
   
-  List<VoteVo> getVoteEndTable(Map<String,Object> paramMap);
+  List<VoteVo> getMyVoteEndTable(Map<String,Object> paramMap);
   
-  List<VoteVo> getVoteIngTable(Map<String,Object> paramMap);
+  List<VoteVo> getMyVoteIngTable(Map<String,Object> paramMap);
   
   List<VoteVo> getMyVoteTable(Map<String,Object> paramMap);
   

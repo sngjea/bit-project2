@@ -58,22 +58,17 @@
   <select id="selectEnd" parameterType="int" resultMap="VoteVoMap">
       
   </select>
-  <select id="selectIng" parameterType="int" resultMap="VoteVoMap">
-      select * from voteTable where voteExit='진행';
-  </select>
   
   <delete id="delete" parameterType="int">
       DELETE FROM voteTable WHERE Vtno=#{no}
   </delete>
   
- <select id="getVoteEndTable" parameterType="map" resultMap="VoteVoMap">
-      select * from voteTable where voteExit='종료됨',userID = #{userID} Order By VTno desc
-      LIMIT #{startIndex}, #{pageSize} 
+ <select id="getMyVoteEndTable" parameterType="map" resultMap="VoteVoMap">
+      select * from voteTable where voteExit='종료됨' and userID = #{userID} Order By VTno desc LIMIT #{startIndex}, #{pageSize} 
   </select>
   
-  <select id="getVoteIngTable" parameterType="map" resultMap="VoteVoMap">
-     select * from voteTable where voteExit='진행중',userID = #{userID} Order By VTno desc
-      LIMIT #{startIndex}, #{pageSize} 
+  <select id="getMyVoteIngTable" parameterType="map" resultMap="VoteVoMap">
+     select * from voteTable where voteExit='진행중'and userID = #{userID} Order By VTno desc LIMIT #{startIndex}, #{pageSize} 
   </select>
   
   

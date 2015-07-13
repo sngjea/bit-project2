@@ -2,6 +2,7 @@
 //table은 어디에다 붙일 것인지
 //num은 몇페이지 것을 꺼낼 건지
 // size는 페이지당 size를 나타냄
+//oderby는 진행중 과 종료됨 페이지를 보여주는 것이다 default는 둘다 보여주는 페이지 요청
 function appendTable(table,num,size,oderby) {
 	var url;
 	
@@ -22,8 +23,10 @@ function appendTable(table,num,size,oderby) {
 	 
 		 if(oderby) {
 			 if(oderby == "진행중") {
+				 pageSize=10
 				 url = domain +"/vote/getMyVoteIngTable.do?pageNo="+pageCount+"&pageSize="+pageSize
 			 } else if(oderby =="종료됨") {
+				 pageSize=10
 				 url = domain + "/vote/getMyVoteEndTable.do?pageNo="+pageCount+"&pageSize="+pageSize
 			 }
 		 }
@@ -43,6 +46,9 @@ function appendTable(table,num,size,oderby) {
 			 ).appendTo(table); 
             
 				return;
+			}
+			if(oderby =="진행중" || oderby=='종료됨') {
+				$(".dataRow").remove();
 			}
 			var rows = result.data;
 		

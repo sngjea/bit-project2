@@ -37,22 +37,28 @@ public class VoteService {
 	  return voteDao.getVoteTable(sqlParams);
   }
   
-  public List<VoteVo> getVoteEndTable(int startIndex, int pageSize) {
+  public List<VoteVo> getMyVoteEndTable(int startIndex, int pageSize, String userID) {
 	  
 	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
 	  sqlParams.put("startIndex", startIndex);
 	  sqlParams.put("pageSize", pageSize);
-	  
-	  return voteDao.getVoteTable(sqlParams);
+	  sqlParams.put("userID", userID);
+	   System.out.println(sqlParams.get("startIndex"));
+	   System.out.println(sqlParams.get("pageSize"));
+	   System.out.println(sqlParams.get("userID"));
+	  return voteDao.getMyVoteEndTable(sqlParams);
   }
   
-  public List<VoteVo> getVoteIngTable(int startIndex, int pageSize) {
+  public List<VoteVo> getMyVoteIngTable(int startIndex, int pageSize, String userID) {
 	  
 	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
 	  sqlParams.put("startIndex", startIndex);
 	  sqlParams.put("pageSize", pageSize);
-	  
-	  return voteDao.getVoteTable(sqlParams);
+	  sqlParams.put("userID", userID);
+	  System.out.println(sqlParams.get("startIndex"));
+	  System.out.println(sqlParams.get("pageSize"));
+	  System.out.println(sqlParams.get("userID"));
+	  return voteDao.getMyVoteIngTable(sqlParams);
   }
   
   public List<VoteVo> getHotVoteTable(int startIndex, int pageSize) {
