@@ -37,6 +37,24 @@ public class VoteService {
 	  return voteDao.getVoteTable(sqlParams);
   }
   
+  public List<VoteVo> getVoteEndTable(int startIndex, int pageSize) {
+	  
+	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+	  sqlParams.put("startIndex", startIndex);
+	  sqlParams.put("pageSize", pageSize);
+	  
+	  return voteDao.getVoteTable(sqlParams);
+  }
+  
+  public List<VoteVo> getVoteIngTable(int startIndex, int pageSize) {
+	  
+	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+	  sqlParams.put("startIndex", startIndex);
+	  sqlParams.put("pageSize", pageSize);
+	  
+	  return voteDao.getVoteTable(sqlParams);
+  }
+  
   public List<VoteVo> getHotVoteTable(int startIndex, int pageSize) {
 	  
 	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();

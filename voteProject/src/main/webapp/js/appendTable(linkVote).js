@@ -15,7 +15,7 @@ function appendTable(table,num,size) {
 		 alert("첫번째 파라미터는 숫자만 허용합니다.")
 	 }
 	
-	$.ajax("http://192.168.10.68:9999/voteProject/vote/selectOne.do?no="+QueryString()["no"],{
+	$.ajax(domain+"/vote/selectOne.do?no="+QueryString()["no"],{
 		method: 'get',
 		dataType: 'json',
 		success: function(result) {

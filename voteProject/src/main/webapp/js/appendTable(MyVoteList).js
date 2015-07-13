@@ -2,7 +2,9 @@
 //table은 어디에다 붙일 것인지
 //num은 몇페이지 것을 꺼낼 건지
 // size는 페이지당 size를 나타냄
-function appendTable(table,num,size) {
+function appendTable(table,num,size,oderby) {
+	var url;
+	
 	var pageSize = '';
 	if(typeof size  == 'number' ){
 	 pageSize = size;
@@ -16,7 +18,16 @@ function appendTable(table,num,size) {
 		 alert("첫번째 파라미터는 숫자만 허용합니다.")
 	 }
 	
-	$.ajax("http://192.168.10.68:9999/voteProject/vote/getMyVoteTable.do?pageNo="+pageCount+"&pageSize="+pageSize,{
+	 url = domain+"/vote/getMyVoteTable.do?pageNo="+pageCount+"&pageSize="+pageSize 
+	 
+		 if(oderby) {
+			 if(oderby == "진행중") {
+				 url = domain +"/vote/getMyVoteIngTable.do?pageNo="+pageCount+"&pageSize="+pageSize
+			 } else if(oderby =="종료됨") {
+				 url = domain + "/vote/getMyVoteEndTable.do?pageNo="+pageCount+"&pageSize="+pageSize
+			 }
+		 }
+	$.ajax(url,{
 		method: 'get',
 		dataType: 'json',
 		success: function(result) {

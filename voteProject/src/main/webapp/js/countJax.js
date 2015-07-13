@@ -6,7 +6,7 @@ function countJax(table,voteCount,num) {
 
 	console.log(typeof voteCount);
 
-	$.ajax("http://192.168.10.68:9999/voteProject/vote/voteCount.do?voteCount"+voteCount+"=1&no="+num,{
+	$.ajax(domain+"/vote/voteCount.do?voteCount"+voteCount+"=1&no="+num,{
 		method: 'get',
 		dataType: 'json',
 		success: function(result) {

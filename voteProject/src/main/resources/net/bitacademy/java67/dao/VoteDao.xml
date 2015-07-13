@@ -55,9 +55,26 @@
       WHERE Vtno=#{no}
   </select>
   
+  <select id="selectEnd" parameterType="int" resultMap="VoteVoMap">
+      
+  </select>
+  <select id="selectIng" parameterType="int" resultMap="VoteVoMap">
+      select * from voteTable where voteExit='진행';
+  </select>
+  
   <delete id="delete" parameterType="int">
       DELETE FROM voteTable WHERE Vtno=#{no}
   </delete>
+  
+ <select id="getVoteEndTable" parameterType="map" resultMap="VoteVoMap">
+      select * from voteTable where voteExit='종료됨',userID = #{userID} Order By VTno desc
+      LIMIT #{startIndex}, #{pageSize} 
+  </select>
+  
+  <select id="getVoteIngTable" parameterType="map" resultMap="VoteVoMap">
+     select * from voteTable where voteExit='진행중',userID = #{userID} Order By VTno desc
+      LIMIT #{startIndex}, #{pageSize} 
+  </select>
   
   
    <select id="getVoteTable" parameterType="map" resultMap="VoteVoMap">
@@ -65,10 +82,12 @@
       LIMIT #{startIndex}, #{pageSize} 
   </select>
   
+  
    <select id="getMyVoteTable" parameterType="map" resultMap="VoteVoMap">
       SELECT * FROM voteTable WHERE userID = #{userID} Order By VTno desc
       LIMIT #{startIndex}, #{pageSize} 
   </select>
+  
   
    <select id="getHotVoteTable" parameterType="map" resultMap="VoteVoMap">
          SELECT * FROM voteTable Order By voteCount1 desc

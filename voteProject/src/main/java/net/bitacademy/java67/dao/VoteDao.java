@@ -16,6 +16,10 @@ public interface VoteDao {
   int countAll(String word);
   
   VoteVo selectOne(int no);
+
+  VoteVo selectIng(int no);
+  
+  VoteVo selectEnd(int no);
   
   int delete(int no);
   
@@ -24,6 +28,10 @@ public interface VoteDao {
   VoteVo userIDcheck(VoteVo vote);
   
   List<VoteVo> getVoteTable(Map<String,Object> paramMap);
+  
+  List<VoteVo> getVoteEndTable(Map<String,Object> paramMap);
+  
+  List<VoteVo> getVoteIngTable(Map<String,Object> paramMap);
   
   List<VoteVo> getMyVoteTable(Map<String,Object> paramMap);
   

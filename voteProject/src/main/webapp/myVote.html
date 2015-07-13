@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="js/domain.js"></script>
     <title>MyVote</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +10,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/jquery.cookie.js"></script>
+<script src="js/domain.js"></script>
  
 </head>
 <style>
@@ -196,49 +198,15 @@ $(document).ready(function() {
 });
 
 </script>
-	<script type="text/javascript">
-
-count = 1;
-$(document).ready(function() { 
-	appendTable($('#in-body'),count); count++; 
-			$(window).scroll(function() {  
-				if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-					appendTable($('#in-body'),count);
-					count++;
-				}
-				})
-
-});
-
-</script>
 <script>
 $(document).ready(function() {
+	
 	document.querySelector('#userName').innerText = $.cookie("userName");
+	
 });
-</script>
-<!-- <script src="js/appendTable(fromAjax).js"></script>
-<script src="js/countJax.js"></script>
-<script src='js/hotVote.js'></script>
-	<script type="text/javascript">
-		count = 1;
-		$(document).ready( function() {
-					
-					appendTable($('#in-body'), count);
-					count++;
-					hotVote($('#hotVoteTable'),7)
-					$(window).scroll(
-							function() {
-								if ($(window).scrollTop() == $(document)
-										.height()
-										- $(window).height()) {
-									appendTable($('#in-body'), count);
-									count++;
-								}
-							})
-							
-					
 
-				});
-	</script> -->
+</script>
+	<script src='js/hotVote.js'></script>
+<script>hotVote($('#hotVoteTable'),7)</script>
 </body>
 </html>

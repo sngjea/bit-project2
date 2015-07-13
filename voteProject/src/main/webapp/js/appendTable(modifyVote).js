@@ -5,7 +5,7 @@
 //
 
 function voteExit() {
-	$.ajax("http://192.168.10.68:9999/voteProject/vote/exitListUpdate.do?no="+QueryString()["no"],{
+	$.ajax(domain+"/vote/exitListUpdate.do?no="+QueryString()["no"],{
 		method: 'get',
 		dataType: 'json',
 		success: function() {
