@@ -122,6 +122,15 @@ function appendTable(table,num,size,oderby) {
 			        +'                </div>'
 			        +'            </div>'
 			        +'        </div>'
+			        
+//			        내가한
+//			        +'<div class="col-xs-12 col-sm-2 sidebar-offcanvas" id="sidebar">'
+//			        +'<div id="hotVoteTable" class="list-group">'
+//			        +'<a class="list-group-item active">HOT VOTE</a>'
+//			        +'</div>'
+//			        +'</div>'
+//			        +'<script src='js/hotVote.js'></script>'
+//			        +'<script>hotVote($('#hotVoteTable'),1)</script>'
 	                	).appendTo(table); 
 		    	}		    
 		    
