@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="net.bitacademy.java67.dao.ReplyDao">
+  
+  <resultMap type="ReplyVo" id="ReplyVoMap">
+    <id     column="vno"      property="vno" />
+    <result column="rno"    property="rno" />
+    <result column="re_date" property="replyDate" />
+    <result column="comment"    property="comment" />
+    <result column="userID"    property="userID" />
+    <result column="pwd"    property="password" />
+  </resultMap>
+  
+  
+   <insert id="insert" parameterType="ReplyVo"
+        keyColumn="vno" keyProperty="no" useGeneratedKeys="true">
+      INSERT INTO replyboard (vno,comment,userID) 
+      VALUES (#{vno},#{comment},#{userID})
+  </insert>
+  
+  
+ <select id="selectReply" parameterType="int" resultMap="ReplyVoMap">
+      SELECT *
+      FROM replyboard
+      WHERE vno=#{vno} Order By rno desc
+  </select>
+  
+  <delete id="delete" parameterType="int">
+   DELETE FROM replyboard WHERE rno=#{rno}
+  
+  </delete>
+  
+  
+  <update id="update" parameterType="ReplyVo">
+      UPDATE replyboard SET 
+        comment=#{comment}
+      WHERE rno=#{rno}
+  </update>
+  
+  
+<!--   <select id="selectReply" parameterType="map" resultMap="ReplyVoMap"> -->
+<!--       SELECT * FROM replyboard WHERE vno=#{vno} -->
+<!--   </select> -->
+  
+  
+  
+  </mapper>

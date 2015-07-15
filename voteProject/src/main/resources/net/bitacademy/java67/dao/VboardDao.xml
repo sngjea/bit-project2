@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="net.bitacademy.java67.dao.VboardDao">
+  
+  <resultMap type="VboardVo" id="VboardVoMap">
+    <id     column="vno"      property="vno" />
+    <result column="title"    property="title" />
+    <result column="content"  property="content" />
+    <result column="cre_date" property="createDate" />
+    <result column="comment"    property="comment" />
+    <result column="userID"    property="userID" />
+  </resultMap>
+  
+   <insert id="insert" parameterType="VboardVo"
+        keyColumn="vno" keyProperty="vno" useGeneratedKeys="true">
+      INSERT INTO vboard (title,content,cre_date,userID) 
+      VALUES (#{title},#{content},now(),#{userID})
+  </insert>
+  
+  <select id="selectList" parameterType="map" resultMap="VboardVoMap">
+      SELECT vno, title, content, cre_date, userID
+      FROM vboard
+    <if test="word != null and word != ''">
+      WHERE title like CONCAT('%', #{word}, '%') OR
+            content like CONCAT('%', #{word}, '%')
+    </if>
+    <choose>
+      <when test="order == 'title'">ORDER BY title ASC</when>
+      <when test="order == 'createDate'">ORDER BY cre_date ASC</when>
+      <when test="order == 'views'">ORDER BY views DESC</when>
+      <otherwise>ORDER BY vno DESC</otherwise>
+    </choose>
+      LIMIT #{startIndex}, #{pageSize}
+  </select>
+  
+  <select id="countAll" parameterType="string" resultType="int">
+      SELECT count(vno)  
+      FROM vboard
+    <if test="value != null and value != ''">
+      WHERE title like CONCAT('%', #{value}, '%') OR
+            content like CONCAT('%', #{value}, '%')
+    </if>
+  </select>
+  
+  <select id="selectOne" parameterType="int" resultMap="VboardVoMap">
+      SELECT vno, title, content, cre_date
+      FROM vboard 
+      WHERE vno=#{vno}
+  </select>
+  
+  <delete id="delete" parameterType="int">
+      DELETE FROM vboard WHERE vno=#{value}
+  </delete>
+  
+  <update id="update" parameterType="VboardVo">
+      UPDATE vboard SET 
+        title=#{title} 
+        ,content=#{content}
+      WHERE vno=#{vno}
+  </update>
+  
+  <insert id="userIDcheck" parameterType="VboardVo">
+      INSERT INTO id123 (id) VALUES (#{userID})
+  </insert>
+  
+  <select id="getTable" parameterType="map" resultMap="VboardVoMap">
+      SELECT * FROM vboard Order By vno desc
+      LIMIT #{startIndex}, #{pageSize} 
+  </select>
+  
+  
+  
+  
+  
+  </mapper>

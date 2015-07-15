@@ -11,7 +11,7 @@
  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/domain.js"></script>
- 
+
 </head>
 <style>
 
@@ -66,39 +66,29 @@
       <div class="modal-body">
            
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-    
-    google.load('visualization', '1', {packages: ['corechart']});
-    google.setOnLoadCallback(drawChart,{woals:'woals'});
-      function drawChart(woals) {
-    	  console.log(woals)
-    	     var data = new google.visualization.DataTable();
-    	      data.addColumn('string', 'Pizza');
-    	      data.addColumn('number', 'Populartiy');
-    	      data.addRows([
-    	        ['data1', 33],
-    	        ['data2', 26]
-    	      ]);
-
-    	      var options = {
-    	        title: 'Vote',
-    	        sliceVisibilityThreshold: .2
-    	      };
-
-    	      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-    	      chart.draw(data, options);
-      } 
-     
-    </script>
-	
+	<div id="piechart3" style="width: 200px; height: 200px; float:left   "></div>
 	<h3 id="bringResult" >결과 가져오기</h3> 
-	<div id="piechart_3d" style="width: 900px; height: 150px;"></div>
+	
+	<div style=" text-align:center;   width:100%;">
+	<div  style="margin:0 auto; width: 400px; text-align:left;">
+	
+	<div id="piechart" style="width: 200px; height: 200px; float:left   "></div>
+<div id="piechart2" style="width: 200px; height: 200px;  float:left; "></div>
+</div>
+</div>
+<script src="js/googleGraph.js"></script>
 		다른 결과 보기 
 
 
       </div>
       <!-- Footer -->
-      <div class="modal-footer">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+      <div class="modal-footer" >
         Footer
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
       </div>

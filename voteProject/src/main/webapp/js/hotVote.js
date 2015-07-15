@@ -21,7 +21,7 @@ function hotVote(table,size,num) {
             return;
          }
          var rows = result.data;
-//divx1+num로 countJAX의 각 div부모테이블을 지정함
+//divx1+num로 countJAX의 각 div부모테이블을 지정함s
 //count1+row[i].no로 각 count의 값을 지정함 
 //num에 rows[i].no를넣도록 하드코딩 해놧음으로 row[i]와 num은 결국 같은 값을 가 
          for(var i in rows) {

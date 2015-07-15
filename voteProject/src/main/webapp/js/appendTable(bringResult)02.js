@@ -43,26 +43,7 @@ function bringResultTable(table,num,size) {
 					
 					
 	                ).appendTo(table); 
-		    }
-		    
-		      google.load("visualization", "1", {packages:["corechart"]});
-		      google.setOnLoadCallback(drawChart);
-		      function drawChart() {
-		        var data = google.visualization.arrayToDataTable([
-		          ['Language', 'Speakers (in millions)'],
-		          ['German',  5.85],
-		        ]);
-
-		      var options = {
-		        legend: 'none',
-		        pieSliceText: 'label',
-		        title: 'Swiss Language Use (100 degree rotation)',
-		        pieStartAngle: 100,
-		      };
-
-		        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-		        chart.draw(data, options);
-		      }
+		    }		    
 		    
 		},
 		error: function(xhr, textStatus, errorThrown) {
