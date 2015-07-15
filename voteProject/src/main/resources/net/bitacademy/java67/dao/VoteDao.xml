@@ -85,8 +85,7 @@
   
   
    <select id="getHotVoteTable" parameterType="map" resultMap="VoteVoMap">
-         SELECT * FROM voteTable Order By voteCount1 desc
-      LIMIT #{startIndex}, #{pageSize} 
+         SELECT * FROM voteTable where Vtno = 107 Order By voteCount1 desc
       
   </select>
    
