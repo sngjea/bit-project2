@@ -150,7 +150,7 @@ img {
          <div class="col-xs-12 col-sm-3">
             <div class="list-group">
                <div class="thumbnail">
-                  <br> <img src="images/profile.png">
+                  <br> <img id="profileIMG" >
 
                   <h3>
                      <center id='userName'></center>
@@ -290,6 +290,12 @@ img {
 $(document).ready(function() {
    document.querySelector('#userName').innerText = $.cookie("userName");
 });
+$(document).ready(function() {
+   document.querySelector('#profileIMG').src = 'http://graph.facebook.com/'+$.cookie("userUID")+'/picture?type=large'
+		   
+});
+
+
 </script>
 
 </body>

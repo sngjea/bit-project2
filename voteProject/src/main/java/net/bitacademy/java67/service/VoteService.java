@@ -34,7 +34,7 @@ public class VoteService {
 	    sqlParams.put("startIndex", startIndex);
 	    sqlParams.put("pageSize", pageSize);
 	    
-	  return voteDao.getHotVoteTable(sqlParams);
+	  return voteDao.getVoteTable(sqlParams);
   }
   
   public List<VoteVo> getMyVoteEndTable(int startIndex, int pageSize, String userID) {
