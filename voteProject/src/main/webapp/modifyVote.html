@@ -84,7 +84,7 @@
         <div class="list-group">
             <div class="thumbnail">
                 <br>
-                <img src="images/profile.png">
+                <img id="profileIMG" >
 
                 <h3>
                     <center id="userName"></center>
@@ -160,6 +160,15 @@
 $(document).ready(function() {
 	document.querySelector('#userName').innerText = $.cookie("userName");
 });
+
+$(document).ready(function() {
+	   document.querySelector('#profileIMG').src = 'http://graph.facebook.com/'+$.cookie("userUID")+'/picture?type=large'
+			   
+	});
+	
+	
+	
+	
 </script>
 <script type="text/javascript">
 	appendTable($("#in-body"),1,1);

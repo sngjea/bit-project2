@@ -239,7 +239,7 @@ public class VoteController {
 			@RequestParam(required=false,defaultValue="1") int pageNo,
 			@RequestParam(required=false,defaultValue="3") int pageSize
 			) throws Exception {
-		System.out.println("into getVoteTable function");
+		System.out.println("into getHotVoteTable function");
 		
 		//	  HashMap<String,Object> sqlParams = new HashMap<String,Object>();
 		//	    sqlParams.put("tno",tno);
@@ -248,7 +248,7 @@ public class VoteController {
 		
 		responseData.put("status", "success");
 		responseData.put("data",
-				voteService.getVoteTable(
+				voteService.getHotVoteTable(
 						getStartIndexOfPage(pageNo, pageSize),pageSize));
 		
 		System.out.println("1");

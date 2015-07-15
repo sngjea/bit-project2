@@ -102,7 +102,7 @@
             <div class="list-group">
                 <div class="thumbnail">
                     <br>
-                    <img src="images/profile.png">
+                    <img id="profileIMG">
 
                     <h3>
                         <center id="userName"></center>
@@ -218,6 +218,10 @@ $(document).ready(function() {
 	
 });
 
+$(document).ready(function() {
+	   document.querySelector('#profileIMG').src = 'http://graph.facebook.com/'+$.cookie("userUID")+'/picture?type=large'
+			   
+	});
 </script>
 <!-- 	<script src='js/hotVote.js'></script> -->
 <!-- <script>hotVote($('#hotVoteTable'),1)</script> -->
