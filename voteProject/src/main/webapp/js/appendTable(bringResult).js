@@ -38,9 +38,7 @@ function bringResultTable(table,num,size) {
 			.html(
 //					'<h3>블로그데이터 1'+row[i].blogdata1+'</h3>'
 //					+'<h3>블로그데이터 2'+row[i].blogdata2+'</h3>'
-					'<h3>보트카운트1'+rows[i].voteCount1+'</h3>'
-					+'<h3>보트카운트2'+rows[i].voteCount2+'</h3>'
-					
+					'<h3>피자 '+rows[i].voteCount1+' : '+rows[i].voteCount2+' 햄버거</h3>'
 					
 	                ).appendTo(table); 
 		    }

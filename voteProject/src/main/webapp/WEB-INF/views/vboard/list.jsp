@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/voteProject/js/domain.js"></script>
+    
 </head>
 <style>
 
@@ -57,10 +58,10 @@
         <div class="list-group">
             <div class="thumbnail">
                 <br>
-                <img src="images/profile.png">
+                <img id="profileIMG">
 
                 <h3>
-                    <center>김일권</center>
+                    <center id="userName"></center>
                 </h3>
                 <br>
                 <a href="registVote.html" class="btn btn-lgrge btn-block btn-warning">Regist Vote</a>
@@ -86,8 +87,7 @@
             <!--</div>-->
 
 
-<!--             반복문 시작 -->
-<!-- href='#myModal2'  -->
+
       <c:forEach items="${list}" var="vboard">
       
             <div class="jumbotron" id="jumbo${vboard.vno}">
@@ -126,7 +126,7 @@
 
 					</div>
            </c:forEach>
-           
+         
 <!--             반복문 끝 -->
             
             <div class="row">
@@ -144,31 +144,9 @@
                             <li><a href="#">&raquo;</a></li>
 
                         </ul>
-                    </div>/input-group
+                    </div>
                     </center>
-                </div>/.col-lg-6
-
-<!-- <div style="text-align:center;" class="input-group"> -->
-<!-- <ul  class="pagination"> -->
-<%--     <c:choose> --%>
-<%--       <c:when test="${pageNo > 1}"> --%>
-<%--         <li><a href='list.do?pageNo=${pageNo-1}&pageSize=${pageSize}&word=${param.word}&order=${param.order}'>&laquo;</a></li>  --%>
-<%--       </c:when> --%>
-<%-- <%--       <c:otherwise><li>&laquo;</li></c:otherwise> --%> --%>
-<%--     </c:choose> --%>
-    
-<%--      <li ><a href="#">${pageNo}</a></li> --%>
-<%--      <li ><a href='list.do?pageNo=${pageNo+1}&pageSize=${pageSize}&word=${param.word}&order=${param.order}'>${pageNo+1}</a></li> --%>
-<%--      <li ><a href='list.do?pageNo=${pageNo+2}&pageSize=${pageSize}&word=${param.word}&order=${param.order}'>${pageNo+2}</a></li> --%>
-     
-<%--     <c:choose> --%>
-<%--       <c:when test="${pageNo < maxPage}"> --%>
-<%--         <li><a href='list.do?pageNo=${pageNo+1}&pageSize=${pageSize}&word=${param.word}&order=${param.order}'>&raquo;</a></li> --%>
-<%--       </c:when> --%>
-<%--       <c:otherwise><li>[페이지가 없습니다]</li></c:otherwise> --%>
-<%--     </c:choose> --%>
-<!--      </ul> -->
-<!--   </div>   -->
+                </div>
   
                  <form action='list.do' method='get'>
                  
@@ -183,11 +161,13 @@
                 
                 </form>
             </div><!-- /.row -->
+             </div>
+          
             <hr>
 
             <center><a href="#">Back on top</a></center>
 
-        </div>
+       
 <!--  등록시작 -->
       <form action="add.do" method="post" enctype="multipart/form-data">
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -265,42 +245,49 @@
                        <button id="replyChangeBtn" type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </div>
+                
             </div>
+            
         </div>
         
 <!-- replyUpdateRno   replyUpdateComment -->
 <!-- 리플라이 수정 끝 -->
 
         <!--/.col-xs-12.col-sm-9-->
+        
         <!--/.sidebar-offcanvas-->
     </div>
     <!--/row-->
+    <div class="col-xs-12 col-sm-2 sidebar-offcanvas" id="sidebar">
+            <div id="hotVoteTable" class="list-group">
+               <a class="list-group-item active">HOT VOTE</a>
+               
+   
+            </div>
+         </div>
     <footer>
-        <p>&copy; Company 2014</p>
     </footer>
 
 </div>
 <!--/.container-->
 
+
+
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript">
 function updateBoard(no) {
 	$('#formVno').val(no);
 	$('#formTitle').val($('#jumbo' + no + ' .jumbotitle').text());
 	
-// 	$('#formTitle').val($('#jumbo' + no + ' .jumbotitle').text());
 	$('#formContent').val($('#jumbo' + no + ' .jumbocontent').text());
 	
 }
-// 모르겠음
 </script>
 
 <script type="text/javascript">
 
 function replyUpdate(no) {
 	
-// 	alert("같이됨");
 	$('#formReplyNo').val(no)
 	$('#formReply').val($('#replyComment'+no).text());
 	
@@ -313,7 +300,6 @@ function replyUpdate(no) {
 <script type="text/javascript">
 
 function replyBtn(no) {
-// 	  alert("되나?");
 	$.ajax(domain+'/vboard/replyDetail.do?vno='+no, {
 	    method: 'get',
 	    dataType: 'json',
@@ -337,7 +323,6 @@ function replyBtn(no) {
 	    	  
 	    	  $('.dataRow').remove();
 	    	  
-//         var no = no;
 	    
 	        var rows = result.data;
 	    	
@@ -366,9 +351,7 @@ function replyBtn(no) {
 	            		+'<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>'
 	                +'  </button>'
 	                
-// 	                role="menuitem" tabindex="-1"  data-target="#myModa3"
 	                +'<a onclick="replyUpdate('+rows[i].rno+')" data-target="#myModal222"  role="menuitem" tabindex="-1" class="btn btn-default btn-sm pull-right" data-toggle="modal">'
-// 	                data-target="#myModa3"
 	                +'<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>'
 	                +'<div class="form-group">'
 	                +'<textarea id="replyComment'+rows[i].rno+'" name="formtextarea1" rows="5" onFocus="this.blur()" class="col-xs-12 col-sm-12" '
@@ -382,13 +365,11 @@ function replyBtn(no) {
 	                +'</div>'
 	                  +'</div>'
 	                  
-// 	                  <span class='jumbocontent'>rows[i].comment</span>
 	                  
 	            ).appendTo(table); 
 	            
 	            
 	          }       
-// 	          console.log("되나?");
 	        },
 	      error: function(xhr, textStatus, errorThrown) {
 	          alert('reply 안됨');
@@ -400,7 +381,6 @@ function replyBtn(no) {
 
 <script type="text/javascript">
 function replySubmit(no) {
-// 	alert(no);
 	$.ajax(domain + '/vboard/replyAdd.do?vno='+ no, {
 	    method: 'POST',
 	    dataType: 'json',
@@ -423,8 +403,6 @@ function replySubmit(no) {
 
 <script type="text/javascript">
 function replyDelete(no,no1) {
-// 	alert(no);
-// 	alert(no1);
 	
 	$.ajax(domain +'/vboard/replyDelete.do?rno='+ no, {
 	    method: 'GET',
@@ -445,7 +423,6 @@ function replyDelete(no,no1) {
 
 <script type="text/javascript">
 $('#replyChangeBtn').click(function(event) {
-// 	alert("업데이트");
 	$.ajax(domain+'/vboard/replyChange.do' , {
 	      method: 'get',
 	      dataType: 'json',
@@ -465,18 +442,17 @@ $('#replyChangeBtn').click(function(event) {
 	
 </script>
 
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/voteProject/js/jquery.cookie.js"></script>
 <script type="text/javascript">
+$(document).ready(function() {
+	   document.querySelector('#userName').innerText = $.cookie("userName");
+	});
 
-jQuery(document).ready(function($) {
-
-        $(".scroll").click(function(event){            
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-        });
-});
-
-</script>
-
+	$(document).ready(function() {
+	   document.querySelector('#profileIMG').src = 'http://graph.facebook.com/'+$.cookie("userUID")+'/picture?type=large'
+	});
+	</script>
 
 
 </body>
