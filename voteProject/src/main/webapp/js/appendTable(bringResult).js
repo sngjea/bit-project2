@@ -38,29 +38,11 @@ function bringResultTable(table,num,size) {
 			.html(
 //					'<h3>블로그데이터 1'+row[i].blogdata1+'</h3>'
 //					+'<h3>블로그데이터 2'+row[i].blogdata2+'</h3>'
-					'<h3>피자 '+rows[i].voteCount1+' : '+rows[i].voteCount2+' 햄버거</h3>'
+//					'<h3>피자 '+rows[i].voteCount1+' : '+rows[i].voteCount2+' 햄버거</h3>'
 					
 	                ).appendTo(table); 
 		    }
 		    
-		      google.load("visualization", "1", {packages:["corechart"]});
-		      google.setOnLoadCallback(drawChart);
-		      function drawChart() {
-		        var data = google.visualization.arrayToDataTable([
-		          ['Language', 'Speakers (in millions)'],
-		          ['German',  5.85],
-		        ]);
-
-		      var options = {
-		        legend: 'none',
-		        pieSliceText: 'label',
-		        title: 'Swiss Language Use (100 degree rotation)',
-		        pieStartAngle: 100,
-		      };
-
-		        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-		        chart.draw(data, options);
-		      }
 		    
 		},
 		error: function(xhr, textStatus, errorThrown) {
