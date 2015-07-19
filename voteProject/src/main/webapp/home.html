@@ -8,31 +8,24 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
-
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="icon" href="../../favicon.ico">
 
 <title>Main</title>
 
 <!-- Bootstrap core CSS -->
-<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="offcanvas.css" rel="stylesheet">
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]>
     <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -41,8 +34,7 @@
     <![endif]-->
 
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="js/jquery.cookie.js"></script>
+
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -52,11 +44,10 @@
 	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="js/naverLogin.js"></script>
 <script src="js/sub_naverLogin.js"></script>
-
+<script src="js/domain.js"></script>
 <script src="js/fblogin.js"></script>
 <script src="js/sub_naverLogin.js"></script>
 <script>
-	var domain = "http://192.168.10.68:9999/voteProject";
 	var checkCookie = $.cookie("state_token");
 
 	if (!checkCookie) {
@@ -134,16 +125,6 @@ img {
 
 
 	<div id="fb-root"></div>
-	<script>
-		FB.ui({
-			method : 'share_open_graph',
-			action_type : 'og.likes',
-			action_properties : JSON.stringify({
-				object : 'https://developers.facebook.com/docs/',
-			})
-		}, function(response) {
-		});
-	</script>
 	
 	<div class="fb-like"
 		data-href="https://developers.facebook.com/docs/plugins/"
@@ -219,7 +200,6 @@ img {
 
 	</div>
 
-	<script src="offcanvas.js">
 		
 	</script>
 	<script src="js/appendTable(fromAjax).js"></script>

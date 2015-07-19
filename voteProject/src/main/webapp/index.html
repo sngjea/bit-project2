@@ -14,11 +14,11 @@
 <script src="js/jquery.cookie.js"></script>
 <script src="js/fblogin.js"></script>
 <link rel="icon" href="../favicon.ico">
-
+<script src="js/domain.js"></script>
 <script>
  var checkSession = $.cookie("state_token");
 	    if(checkSession != null) {
-	    	location.href = "http://192.168.10.68:9999/voteProject/home.html";
+	    	location.href = domain + "/home.html";
 	    	}
 </script>
 

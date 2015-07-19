@@ -102,7 +102,7 @@ function getUserInfo() {
 		$.cookie("userName", response.name);
 		$.cookie("userUID", response.id);
 		console.log(response)
-		post_to_url("http://192.168.10.68:9999/voteProject/vote/IDcheck.do",{
+		post_to_url(domain + "/vote/IDcheck.do",{
 			'userID' : response.email,
 			'userName' : response.name
 		})
