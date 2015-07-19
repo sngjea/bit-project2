@@ -14,16 +14,39 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/voteProject/js/domain.js"></script>
     
-</head>
-<style>
+    <script src="js/naverLogin.js"></script>
+    <script src="js/sub_naverLogin.js"></script>
+    <script src="js/sub_naverLogin.js"></script>
+    
+    
+    <style>
 
-    .jumbotron {
-        background-color: #F6F6F6;
-    }
+.jumbotron {
+  background-color: #F6F6F6;
+}
 
+img {
+  width: 180px;
+  height: 150px;
+  /*     background-position: center center; */
+  background-size: cover;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+  /*     display: inline-block; */
+  /*     padding-left:10px; */
+}
+
+.main-images {
+  width: 200px;
+  height: 180px;
+  background-size: cover;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+}
 </style>
+</head>
 
-<body style="background:#D5D5D5">
+
+
+<body style="background-image: url('55.gif'); background-size: 100% auto; background-attachment: fixed; opacity: 0.95">
 <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
         <div class="navbar-header">
@@ -34,14 +57,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">VOTE FIGHER</a>
+            <a class="navbar-brand" href="/voteProject/home.html">VOTE FIGHER</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Intro</a></li>
-                <li><a href="#">QnA</a></li>
-                <li><a href="#" class="pull-right">Logout</a></li>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/voteProject/home.html">Home</a></li>
+                <li><a href="/voteProject/myVote.html">About</a></li>
+                <li class="active"><a href="/voteProject/vboard/list.do">QnA</a></li>
+                <li><a onclick="logoutNaver();" 
+                href="http://192.168.10.68:9999/voteProject/vote/logout.do" class="pull-right">Logout</a></li>
             </ul>
         </div>
         <!-- /.nav-collapse -->
@@ -64,8 +88,8 @@
                     <center id="userName"></center>
                 </h3>
                 <br>
-                <a href="registVote.html" class="btn btn-lgrge btn-block btn-warning">Regist Vote</a>
-                <a href="myVote.html" class="btn btn-large btn-block btn-primary">View MyVote</a>
+                <a href="/voteProject/registVote.html" class="btn btn-lgrge btn-block btn-warning">Regist Vote</a>
+                <a href="/voteProject/myVote.html" class="btn btn-large btn-block btn-primary">View MyVote</a>
             </div>
         </div>
         </div>
@@ -441,6 +465,10 @@ $('#replyChangeBtn').click(function(event) {
 	});
 	
 </script>
+
+
+<script src='js/hotVote.js'></script>
+<script>hotVote($('#hotVoteTable'),1)</script>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="/voteProject/js/jquery.cookie.js"></script>

@@ -1,1 +1,1 @@
-var domain = "http://192.168.10.68:9999/voteProject"
+var domain = "http://192.168.0.3:9999/voteProject"
