@@ -34,14 +34,14 @@ function googleGraphTable2(data1,data2){
 		var data = google.visualization.arrayToDataTable([
 		                                                  ['Language', 'Speakers (in millions)'],
 		                                                  [' ',  0],
-		                                                  ['피자',  10]
+		                                                  ['찍먹',  11102]
 		                                                  ]);
 		var options = {
 				legend: 'none',
 				pieSliceText: 'label',
 				height: 300,
 				width: 250,
-				chartArea:{left:40,top:0,width:'150%',height:'150%'}
+				chartArea:{left:55,top:0,width:'75%',height:'75%'}
 		};
 
 		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -51,7 +51,7 @@ function googleGraphTable2(data1,data2){
 	function drawChart2() {
 		var data = google.visualization.arrayToDataTable([
 		                                                  ['Language', 'Speakers (in millions)'],
-		                                                  ['치킨',  30]
+		                                                  ['부먹',  4372]
 		                                                  ]);
 
 		var options = {
@@ -59,7 +59,7 @@ function googleGraphTable2(data1,data2){
 				pieSliceText: 'label',
 				height: 300,
 				width: 250,
-				chartArea:{left:55,top:0,width:'50%',height:'100%'}
+				chartArea:{left:55,top:0,width:'50%',height:'75%'}
 		};
 
 		var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
@@ -76,8 +76,8 @@ function googleBarTable(d1,d2){
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
               ['Element', 'Density', { role: 'style' }, { role: 'annotation' } ],
-              ['RED', 5.94, '#d63b16', 'Cu' ],
-              ['Silver', 10.49, '#3364c5', 'Ag' ],
+              ['찍먹', 11, '#d63b16', '11' ],
+              ['부먹', 6, '#3364c5', '6' ],
            ]);
 
       var view = new google.visualization.DataView(data);
@@ -89,7 +89,8 @@ function googleBarTable(d1,d2){
 //                       2]);
 
       var options = {
-        width: 500,
+    		  height: 250,
+				width: 500,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
         axes: {

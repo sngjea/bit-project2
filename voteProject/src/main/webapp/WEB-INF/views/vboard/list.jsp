@@ -467,7 +467,7 @@ $('#replyChangeBtn').click(function(event) {
 </script>
 
 
-<script src='js/hotVote.js'></script>
+<script src='../js/hotVote.js'></script>
 <script>hotVote($('#hotVoteTable'),1)</script>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

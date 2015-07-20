@@ -68,7 +68,7 @@ function appendTable(table,num,size) {
 						+'<br>'
 						+'<br>'
 						+'<br>'
-						+'			<img onclick="newPopup(\'http://192.168.10.68:9999/voteProject/linkVote.html?no='+QueryString()["no"]+'\')" src="images/facebook.png" style="border: none; visibility: visible; width: 53px; height: 20px;">'			
+						+'			<img onclick="newPopup(\''+domain+'+/linkVote.html?no='+QueryString()["no"]+'\')" src="images/facebook.png" style="border: none; visibility: visible; width: 53px; height: 20px;">'			
 						+'			<a href="modifyVote.html?no='+QueryString()["no"]+'"  class="btn btn-sm btn-info pull-right">수정</a>'
 						+' 			<a href="home.html" class="btn btn-sm btn-default pull-right">목록</a>'
 						+'                </div>'
